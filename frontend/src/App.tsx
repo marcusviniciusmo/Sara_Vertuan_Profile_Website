@@ -1,3 +1,5 @@
+import './index.css';
+
 function App() {
   return (
     <h1>Sara Vertuan Profile</h1>
