@@ -3,3 +3,6 @@ yarn create react-app frontend --template typescript
 
 // React Router Dom
 npm i react-router-dom
+
+// Radix-UI Switch
+npm install @radix-ui/react-switch
