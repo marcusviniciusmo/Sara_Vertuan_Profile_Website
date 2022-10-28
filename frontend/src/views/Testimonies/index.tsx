@@ -1,6 +1,10 @@
+import { Sidebar } from "components/Sidebar"
+
 export function Testimonies() {
   return (
     <>
+      <Sidebar />
+
       <h1>DEPOIMENTOS View</h1>
       <h3>Gabriela Maya</h3>
       <h5>Autora</h5>

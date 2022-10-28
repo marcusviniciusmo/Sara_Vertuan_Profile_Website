@@ -1,6 +1,10 @@
+import { Sidebar } from "components/Sidebar"
+
 export function Contact() {
   return (
     <>
+      <Sidebar />
+
       <h1>CONTATO View</h1>
       <h4>Gostou do que  viu? Entre em contato e vamos conversar!</h4>
       <h5>CONFIRA MINHAS REDES SOCIAIS</h5>

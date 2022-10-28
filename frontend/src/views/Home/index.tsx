@@ -1,6 +1,10 @@
+import { Sidebar } from "components/Sidebar"
+
 export function Home() {
   return (
     <>
+      <Sidebar />
+
       <h1>INÍCIO View</h1>
       <h3>AQUI VAI UMA FOTO</h3>
       <h3>AQUI VAI UMA FOTO</h3>

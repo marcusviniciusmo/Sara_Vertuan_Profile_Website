@@ -1,6 +1,10 @@
+import { Sidebar } from "components/Sidebar"
+
 export function AboutMe() {
   return (
     <>
+      <Sidebar />
+
       <h1>SOBRE MIM View</h1>
       <h3>AQUI VAI UMA IMAGEM</h3>
       <p>
