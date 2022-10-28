@@ -1,6 +1,7 @@
 import { Home } from 'views/Home';
 import { AboutMe } from 'views/AboutMe';
 import { Testimonies } from 'views/Testimonies';
+import { Gallery } from 'views/Gallery';
 import './index.css';
 
 function App() {
@@ -34,31 +35,7 @@ function App() {
 
       <Testimonies />
 
-      <h1>GALERIA</h1>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
-      <h3>AQUI VAI UMA IMAGEM</h3>
+      <Gallery />
 
       <h1>CONTATO</h1>
       <h4>Gostou do que  viu? Entre em contato e vamos conversar!</h4>
