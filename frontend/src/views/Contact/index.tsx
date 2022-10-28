@@ -1,8 +1,11 @@
+import { Header } from "components/Header";
 import { Sidebar } from "components/Sidebar"
 
 export function Contact() {
   return (
     <>
+      <Header />
+
       <Sidebar />
 
       <h1>CONTATO View</h1>

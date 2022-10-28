@@ -1,8 +1,11 @@
+import { Header } from "components/Header";
 import { Sidebar } from "components/Sidebar"
 
 export function AboutMe() {
   return (
     <>
+      <Header />
+
       <Sidebar />
 
       <h1>SOBRE MIM View</h1>
