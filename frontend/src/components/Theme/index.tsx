@@ -1,4 +1,5 @@
 import * as Switch from '@radix-ui/react-switch';
+import './styles.css';
 
 export function Theme() {
   return (
@@ -7,8 +8,8 @@ export function Theme() {
       <h3>Tema</h3>
 
       <h5>Light</h5>
-      <Switch.Root>
-        <Switch.Thumb />
+      <Switch.Root className='switchRoot'>
+        <Switch.Thumb className='switchThumb' />
       </Switch.Root>
       <h5>Dark</h5>
     </>
