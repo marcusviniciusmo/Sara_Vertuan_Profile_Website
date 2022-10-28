@@ -1,4 +1,5 @@
 import { Language } from "components/Language"
+import { Theme } from "components/Theme";
 
 export function Header() {
   return (
@@ -6,10 +7,8 @@ export function Header() {
       <h1>HEADER Component</h1>
 
       <Language />
-      
-      <h3>Tema</h3>
-      <h5>Light</h5>
-      <h5>Dark</h5>
+
+      <Theme />
     </>
   );
 };
