@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home } from 'views/Home';
 import { AboutMe } from 'views/AboutMe';
 import { Testimonies } from 'views/Testimonies';
@@ -7,20 +8,15 @@ import './index.css';
 
 function App() {
   return (
-    <>
-      <h1>Sara Vertuan Profile</h1>
-      <h1>INTERFACE</h1>
-
-      <Home />
-
-      <AboutMe />
-
-      <Testimonies />
-
-      <Gallery />
-
-      <Contact />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/aboutMe' element={<AboutMe />} />
+        <Route path='/testimonies' element={<Testimonies />} />
+        <Route path='/gallery' element={<Gallery />} />
+        <Route path='/contact' element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
