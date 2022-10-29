@@ -1,23 +1,37 @@
 import { useState } from "react";
+import { useGlobalContext } from "context";
 import { Menu } from "components/Menu";
-import { Container } from "./styles";
+import { Container, Inner, Header, Content, Strong, Span } from "./styles";
 
 export function Sidebar() {
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
-  
+
+  const { theme } = useGlobalContext();
+
   const handleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
   return (
-    <Container sidebar={sidebarOpen}>
-      <button onClick={handleSidebar}>open</button>
-        <h1>SIDEBAR Component</h1>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h4>Sara Vertuan</h4>
-        <h5>Capas de livros e Diagramatização</h5>
+    <Container sidebar={sidebarOpen} theme={theme}>
+      <Inner>
+        <Header>
+          <button onClick={handleSidebar}>open</button>
+        </Header>
+
+        <Content>
+          {
+            sidebarOpen &&
+            <>
+              <h3>AQUI VAI UMA IMAGEM</h3>
+              <Strong>Sara Vertuan</Strong>
+              <Span>Capas de livros e Diagramatização</Span>
+            </>
+          }
+        </Content>
 
         <Menu />
+      </Inner>
     </Container>
   );
 };
