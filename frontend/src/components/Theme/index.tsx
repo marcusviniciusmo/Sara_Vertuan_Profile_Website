@@ -8,7 +8,7 @@ export function Theme() {
 
   return (
     <Switch.Root
-      className='switchRoot'
+      className={`switchRoot${theme}`}
       defaultChecked={theme === "Dark"}
       onClick={() => setTheme(theme === "Dark" ? 'Light' : 'Dark')}
     >

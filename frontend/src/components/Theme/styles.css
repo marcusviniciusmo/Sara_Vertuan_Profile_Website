@@ -1,30 +1,44 @@
-.switchRoot{
+.switchRootLight,
+.switchRootDark {
+  --borderRadius: 10rem;
+
+  --backgroundRoot: rgb(0 0 0 / 0.9);
+  --widthRoot: 4.2rem;
+  --heightRoot: 2.5rem;
+
+  --backgroundThumb: #FFFFFF;
+  --widthThumb: 2.1rem;
+  --heightThumb: 2.1rem;
+
   all: unset;
-  background-color: rgb(0 0 0 / 0.9);
-  width: 4.2rem;
-  height: 2.5rem;
-  border-radius: 10rem;
-  box-shadow: 0 0.2rem 1rem rgb(0 0 0 / 0.7);
+  background-color: var(--backgroundRoot);
+  width: var(--widthRoot);
+  height: var(--heightRoot);
+  border-radius: var(--borderRadius);
   position: relative;
-  -webkit-tap-highlight-color: rgba(0 0 0 / 0);
+  cursor: pointer;
 }
 
-.switchRoot[data-state="checked"] {
-  background-color: #000000;
+.switchRootLight {
+  box-shadow: 0 0.2rem 1rem rgb(0 0 0 / 1);
+}
+
+.switchRootDark {
+  box-shadow: 0 0.2rem 1rem rgb(255 255 255 / 1);
 }
 
 .switchThumb {
-  background-color: #FFFFFF;
-  width: 2.1rem;
-  height: 2.1rem;
-  border-radius: 10rem;
+  background: var(--backgroundThumb);
+  width: var(--widthThumb);
+  height: var(--heightThumb);
+  border-radius: var(--borderRadius);
   box-shadow: 0 0.2rem 0.2rem rgb(0 0 0 / 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.1s;
   transform: translateX(0.2rem);
-  will-change: transform; 
+  will-change: transform;
 }
 
 .switchThumb[data-state="checked"] {
