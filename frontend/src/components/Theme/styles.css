@@ -15,11 +15,13 @@
 
 .switchThumb {
   background-color: #FFFFFF;
-  display: block;
   width: 2.1rem;
   height: 2.1rem;
   border-radius: 10rem;
   box-shadow: 0 0.2rem 0.2rem rgb(0 0 0 / 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.1s;
   transform: translateX(0.2rem);
   will-change: transform; 
@@ -27,4 +29,12 @@
 
 .switchThumb[data-state="checked"] {
   transform: translateX(1.9rem);
+}
+
+.switchIconLightMode {
+  color: #FF8C00;
+}
+
+.switchIconDarkMode {
+  color: #00008B;
 }

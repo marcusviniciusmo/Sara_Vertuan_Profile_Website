@@ -7,25 +7,18 @@ export function Theme() {
   const { theme, setTheme } = useGlobalContext();
 
   return (
-    <>
-      <h1>THEME Component</h1>
-      <h3>Tema</h3>
-
-      <h5>Light</h5>
-      <Switch.Root
-        className='switchRoot'
-        defaultChecked={theme === "Dark"}
-        onClick={() => setTheme(theme === "Dark" ? 'Light' : 'Dark')}
-      >
-        <Switch.Thumb className='switchThumb'>
-          {
-            theme === "Dark"
-              ? <DarkMode />
-              : <LightMode />
-          }
-        </Switch.Thumb>
-      </Switch.Root>
-      <h5>Dark</h5>
-    </>
+    <Switch.Root
+      className='switchRoot'
+      defaultChecked={theme === "Dark"}
+      onClick={() => setTheme(theme === "Dark" ? 'Light' : 'Dark')}
+    >
+      <Switch.Thumb className='switchThumb'>
+        {
+          theme === "Dark"
+            ? <DarkMode className={`switchIcon${theme}Mode`} />
+            : <LightMode className={`switchIcon${theme}Mode`} />
+        }
+      </Switch.Thumb>
+    </Switch.Root>
   );
 };
