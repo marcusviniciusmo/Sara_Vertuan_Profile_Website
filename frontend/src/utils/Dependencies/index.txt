@@ -14,3 +14,6 @@ yarn add @mui/icons-material
 // Styled Components
 npm i styled-components
 npm i @types/styled-components
+
+// React Country Flag
+npm i react-country-flag
