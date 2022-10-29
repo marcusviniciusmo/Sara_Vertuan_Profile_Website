@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useGlobalContext } from "context";
+import { Menu as MenuIcon, Close } from '@mui/icons-material';
 import { Menu } from "components/Menu";
 import { Container, Inner, Header, Content, Strong, Span } from "./styles";
 
@@ -16,7 +17,11 @@ export function Sidebar() {
     <Container sidebar={sidebarOpen} theme={theme}>
       <Inner>
         <Header>
-          <button onClick={handleSidebar}>open</button>
+          {
+            sidebarOpen
+            ? <Close fontSize="large" onClick={handleSidebar} />
+            : <MenuIcon fontSize="large" onClick={handleSidebar} />
+          }
         </Header>
 
         <Content>
