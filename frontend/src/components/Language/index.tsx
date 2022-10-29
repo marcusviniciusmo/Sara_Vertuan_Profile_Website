@@ -1,17 +1,23 @@
 import { ReactCountryFlag } from 'react-country-flag';
+import { LayoutLanguage, FlagSection } from './styles';
 
 export function Language() {
   return (
-    <>
-      <h1>LANGUAGE Component</h1>
+    <LayoutLanguage>
+      <FlagSection title='Português'>
+        <ReactCountryFlag countryCode='BR' />
+        <strong>PT</strong>
+      </FlagSection>
 
-      <h3>Idioma</h3>
-      <ReactCountryFlag countryCode='BR' />
-      <h5>Português</h5>
-      <ReactCountryFlag countryCode='GB' />
-      <h5>Inglês</h5>
-      <ReactCountryFlag countryCode='IT' />
-      <h5>Italiano</h5>
-    </>
+      <FlagSection title='English'>
+        <ReactCountryFlag countryCode='GB' />
+        <strong>EN</strong>
+      </FlagSection>
+
+      <FlagSection title='Italiano'>
+        <ReactCountryFlag countryCode='IT' />
+        <strong>IT</strong>
+      </FlagSection>
+    </LayoutLanguage>
   );
 };
