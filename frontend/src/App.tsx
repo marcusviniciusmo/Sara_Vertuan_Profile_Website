@@ -5,10 +5,11 @@ import { Layout } from 'styles/Layout';
 import './index.css';
 
 function App() {
+  const [language, setLanguage] = useState<string>('PT');
   const [theme, setTheme] = useState<string>('Dark');
 
   return (
-    <GlobalContext.Provider value={{ theme, setTheme }}>
+    <GlobalContext.Provider value={{ language, setLanguage, theme, setTheme }}>
       <Layout theme={theme}>
         <Router />
       </Layout>
