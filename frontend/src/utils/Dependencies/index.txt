@@ -10,3 +10,7 @@ npm install @radix-ui/react-switch
 // Material-UI Icons
 yarn add @mui/material @emotion/react @emotion/styled
 yarn add @mui/icons-material
+
+// Styled Components
+npm i styled-components
+npm i @types/styled-components
