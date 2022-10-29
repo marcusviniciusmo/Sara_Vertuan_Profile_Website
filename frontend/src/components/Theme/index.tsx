@@ -1,13 +1,9 @@
+import { useGlobalContext } from 'context';
 import * as Switch from '@radix-ui/react-switch';
-import { useState } from 'react';
 import './styles.css';
 
 export function Theme() {
-  const [theme, setTheme] = useState<string>("Dark");
-
-  const handleTheme = () => {
-    setTheme(theme === 'Dark' ? "Light" : "Dark");
-  };
+  const { theme, setTheme } = useGlobalContext();
 
   return (
     <>
@@ -18,7 +14,7 @@ export function Theme() {
       <Switch.Root
         className='switchRoot'
         defaultChecked={theme === "Dark"}
-        onClick={handleTheme}
+        onClick={() => setTheme(theme === "Dark" ? 'Light' : 'Dark')}
       >
         <Switch.Thumb className='switchThumb' />
       </Switch.Root>
