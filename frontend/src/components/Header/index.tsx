@@ -1,14 +1,16 @@
+import { useGlobalContext } from "context";
 import { Language } from "components/Language"
 import { Theme } from "components/Theme";
+import { LayoutHeader } from "./styles";
 
 export function Header() {
-  return (
-    <>
-      <h1>HEADER Component</h1>
+  const { theme } = useGlobalContext();
 
+  return (
+    <LayoutHeader theme={theme}>
       <Language />
 
       <Theme />
-    </>
+    </LayoutHeader>
   );
 };

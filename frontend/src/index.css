@@ -5,6 +5,8 @@
   --backgroundLight: #FFFFFF;
   --colorPrimaryDark: #FFFFFF;
   --colorPrimaryLight: rgba(0, 0, 0, 0.87);
+  --colorSecondaryDark: rgba(255, 255, 255, 0.7);
+  --colorSecondaryLight: rgba(0, 0, 0, 0.6);
 
   font-size: 62.5%; /* 1rem = 10px */
 }
