@@ -1,4 +1,5 @@
 import { useGlobalContext } from 'context';
+import { LightMode, DarkMode } from '@mui/icons-material';
 import * as Switch from '@radix-ui/react-switch';
 import './styles.css';
 
@@ -16,7 +17,13 @@ export function Theme() {
         defaultChecked={theme === "Dark"}
         onClick={() => setTheme(theme === "Dark" ? 'Light' : 'Dark')}
       >
-        <Switch.Thumb className='switchThumb' />
+        <Switch.Thumb className='switchThumb'>
+          {
+            theme === "Dark"
+              ? <DarkMode />
+              : <LightMode />
+          }
+        </Switch.Thumb>
       </Switch.Root>
       <h5>Dark</h5>
     </>
