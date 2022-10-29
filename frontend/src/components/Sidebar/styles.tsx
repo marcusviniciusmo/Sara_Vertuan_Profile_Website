@@ -7,7 +7,7 @@ interface SidebarContainerProps {
 
 export const Container = styled.nav<SidebarContainerProps>`
   background: var(--background${(props) => props.theme});
-  width: ${(props) => props.sidebar ? 'var(--widthSidebarOpened)' : '7.2rem' };
+  width: var(--widthSidebar${(props) => props.sidebar ? 'Opened' : 'Closed' });
   border-right: 0.1rem solid var(--colorSecondary${(props) => props.theme});
   height: 100%;
   margin-top: 4.5rem;
@@ -26,7 +26,7 @@ export const Inner = styled.div`
 `;
 
 export const Header = styled.header`
-  padding: 0 1.25rem 0 0;
+  padding: 0 1.25rem 0 calc((var(--widthSidebarClosed) - var(--widthSidebarIcon)) / 2);
 `;
 
 export const Content = styled.div`

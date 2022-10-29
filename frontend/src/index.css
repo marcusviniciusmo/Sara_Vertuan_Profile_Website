@@ -9,6 +9,8 @@
   --colorSecondaryLight: rgba(0, 0, 0, 0.6);
 
   --widthSidebarOpened: 26rem;
+  --widthSidebarClosed: 7.2rem;
+  --widthSidebarIcon: 2.188rem;
 
   font-size: 62.5%; /* 1rem = 10px */
 }
