@@ -1,30 +1,47 @@
+import { useGlobalContext } from "context";
 import { Link } from "react-router-dom";
 import { Home, Person, Chat, Collections, Call } from '@mui/icons-material';
+import { MenuContainer, MenuOption } from './styles';
 
 export function Menu() {
+  const { theme } = useGlobalContext();
+
   return (
-    <>
-      <h1>MENU Component</h1>
-      <Link to='/'>
-        <Home />
-        <h6>Início</h6>
+    <MenuContainer>
+      <Link to='/' className="noUnderline" title="Início">
+        <MenuOption theme={theme} hasBorder>
+          <Home fontSize="large"/>
+          <span>Início</span>
+        </MenuOption>
       </Link>
-      <Link to='/aboutMe'>
-        <Person />
-        <h6>Sobre Mim</h6>
+
+      <Link to='/aboutMe' className="noUnderline" title="Sobre Mim">
+        <MenuOption theme={theme}>
+          <Person fontSize="large"/>
+          <span>Sobre Mim</span>
+        </MenuOption>
       </Link>
-      <Link to='/testimonies'>
-        <Chat />
-        <h6>Depoimentos</h6>
+
+      <Link to='/testimonies' className="noUnderline" title="Depoimentos">
+        <MenuOption theme={theme}>
+          <Chat fontSize="large"/>
+          <span>Depoimentos</span>
+        </MenuOption>
       </Link>
-      <Link to='/gallery'>
-        <Collections />
-        <h6>Galeria</h6>
+
+      <Link to='/gallery' className="noUnderline" title="Galeria">
+        <MenuOption theme={theme} hasBorder>
+          <Collections fontSize="large"/>
+          <span>Galeria</span>
+        </MenuOption>
       </Link>
-      <Link to='/contact'>
-        <Call />
-        <h6>Contato</h6>
+
+      <Link to='/contact' className="noUnderline" title="Contato">
+        <MenuOption theme={theme} hasBorder>
+          <Call fontSize="large"/>
+          <span>Contato</span>
+        </MenuOption>
       </Link>
-    </>
+    </MenuContainer>
   );
 };
