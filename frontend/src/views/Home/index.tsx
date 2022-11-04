@@ -1,6 +1,7 @@
 import { Header } from "components/Header";
 import { Sidebar } from "components/Sidebar"
 import { Interface } from "styles/Interface";
+import { Album } from "components/Album";
 
 export function Home() {
   return (
@@ -10,6 +11,8 @@ export function Home() {
       <Sidebar />
 
       <Interface>
+        <Album />
+
         <h1>INÍCIO View</h1>
         <h3>AQUI VAI UMA FOTO</h3>
         <h3>AQUI VAI UMA FOTO</h3>
