@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 import { Section, AlbumPage } from './styles';
+import './styles.css';
 
 export function Album() {
   const [index, setIndex] = useState<number>(0);
@@ -25,13 +26,30 @@ export function Album() {
   ]
 
   const previousPage = () => {
-    if (index > 0)
-      setIndex(index - 1);
+    if (index > 0) {
+      const previousPage = document.querySelector('#photoAlbumLeft');
+
+      previousPage?.classList.add('flipLeft');
+
+      setTimeout(() => {
+        setIndex(index - 1);
+        previousPage?.classList.remove('flipLeft');
+      }, 500);
+    };
   };
 
   const nextPage = () => {
-    if (index + 1 < photos.length)
-      setIndex(index + 1);
+    if (index + 1 < photos.length) {
+
+      const nextPage = document.querySelector('#photoAlbumRight');
+
+      nextPage?.classList.add('flipRight');
+
+      setTimeout(() => {
+        setIndex(index + 1);
+        nextPage?.classList.remove('flipRight');
+      }, 500);
+    };
   };
 
   return (
@@ -39,8 +57,20 @@ export function Album() {
       <ArrowBackIos fontSize='large' onClick={previousPage} />
 
       <Section>
-        <AlbumPage url={photos[index].url} side='left' className='right next'></AlbumPage>
-        <AlbumPage side='right' className='left current'>{photos[index].text}</AlbumPage>
+        <AlbumPage
+          id='photoAlbumLeft'
+          className='left'
+          side='left'
+          url={photos[index].url}
+        />
+
+        <AlbumPage
+          id='photoAlbumRight'
+          className='right'
+          side='right'
+        >
+          {photos[index].text}
+        </AlbumPage>
       </Section>
 
       <ArrowForwardIos fontSize='large' onClick={nextPage} />
