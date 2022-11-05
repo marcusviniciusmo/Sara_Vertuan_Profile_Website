@@ -5,7 +5,7 @@ interface AlbumPageProps {
   side: string;
 };
 
-const zoom1 = keyframes`
+const zoom = keyframes`
   0%, 100% {
     transform: scale(0.8);
   }
@@ -15,22 +15,37 @@ const zoom1 = keyframes`
   }
 `;
 
+export const Container = styled.div`
+  margin-inline: 5rem;
+  padding-block: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+`;
+
+export const Arrow = styled.div`
+  transform: scale(1.8);
+  cursor: pointer;
+`;
+
 export const Section = styled.section`
   --duration: 0.5s;
   --ease-in-out: ease-in-out;
   
-  width: 100%;
-  height: 100vh;
+  width: 80%;
+  height: 80vh;
   border-radius: 1vh;
   box-shadow: 0 2vh 4vh rgba(0, 0, 0, 0.2);
   display: flex;
   perspective: 200rem;
   position: relative;
-  transform: scale(0.8);
-  animation: ${zoom1} calc(var(--duration) * 2) var(--ease-in-out);
+  transform: scale(1);
+  animation: ${zoom} calc(var(--duration) * 2) var(--ease-in-out);
 `;
 
-export const AlbumPage = styled.div<AlbumPageProps>`
+export const Page = styled.div<AlbumPageProps>`
   background: url(${(props) => props.url && props.url});
   background: ${(props) => props.url ? `url(${props.url})` : 'red'};
   backface-visibility: hidden;

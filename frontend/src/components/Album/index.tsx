@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
-import { Section, AlbumPage } from './styles';
+import { Container, Arrow, Section, Page } from './styles';
 import './styles.css';
 
 export function Album() {
@@ -53,27 +53,37 @@ export function Album() {
   };
 
   return (
-    <>
-      <ArrowBackIos fontSize='large' onClick={previousPage} />
+    <Container>
+      {
+        index > 0 &&
+        <Arrow title='Previous Page'>
+          <ArrowBackIos fontSize='large' onClick={previousPage} />
+        </Arrow>
+      }
 
       <Section>
-        <AlbumPage
+        <Page
           id='photoAlbumLeft'
           className='left'
           side='left'
           url={photos[index].url}
         />
 
-        <AlbumPage
+        <Page
           id='photoAlbumRight'
           className='right'
           side='right'
         >
           {photos[index].text}
-        </AlbumPage>
+        </Page>
       </Section>
 
-      <ArrowForwardIos fontSize='large' onClick={nextPage} />
-    </>
+      {
+        index + 1 < photos.length &&
+        <Arrow title='Next Page'>
+          <ArrowForwardIos fontSize='large' onClick={nextPage} />
+        </Arrow>
+      }
+    </Container>
   );
 };
