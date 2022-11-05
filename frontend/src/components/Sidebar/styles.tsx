@@ -16,6 +16,7 @@ export const Container = styled.nav<SidebarContainerProps>`
   left: 0;
   overflow: hidden;
   transition: width 0.5s;
+  z-index: 999;
 `;
 
 export const Inner = styled.div`

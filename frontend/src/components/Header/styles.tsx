@@ -16,4 +16,5 @@ export const LayoutHeader = styled.div<LayoutHeaderProps>`
   gap: 3rem;
   position: fixed;
   top: 0;
+  z-index: 999;
 `;
