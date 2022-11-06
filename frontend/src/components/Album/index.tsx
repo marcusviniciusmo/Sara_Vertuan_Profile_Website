@@ -1,29 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useGlobalContext } from 'context';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
+import { AlbumProps } from 'types/Album';
+import { MockedData } from 'mocks/Album';
 import { Container, Arrow, Section, Page } from './styles';
 import './styles.css';
 
 export function Album() {
+  const [mockedData, setMockedData] = useState<AlbumProps>();
   const [index, setIndex] = useState<number>(0);
+  const { language } = useGlobalContext();
 
-  const photo01 = 'https://images.unsplash.com/photo-1630847911146-edd8828abf14?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzMjUxMjQ0Ng&ixlib=rb-1.2.1&q=85';
-
-  const photo02 = 'https://images.unsplash.com/photo-1596774468032-915cdd39ea39?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzMjUxMjg1MQ&ixlib=rb-1.2.1&q=85';
-
-  const photos = [
-    {
-      url: photo01,
-      text: 'Imagem 01'
-    },
-    {
-      url: photo02,
-      text: 'Imagem 02'
-    },
-    {
-      url: '',
-      text: 'Imagem 03'
-    }
-  ]
+  useEffect(() => {
+    setMockedData(MockedData.find((data) => data.language === language));
+  }, [language]);
 
   const previousPage = () => {
     if (index > 0) {
@@ -39,7 +29,7 @@ export function Album() {
   };
 
   const nextPage = () => {
-    if (index + 1 < photos.length) {
+    if (index + 1 < mockedData!?.image.length) {
 
       const nextPage = document.querySelector('#photoAlbumRight');
 
@@ -66,7 +56,7 @@ export function Album() {
           id='photoAlbumLeft'
           className='left'
           side='left'
-          url={photos[index].url}
+          url={mockedData?.image[index].url}
         />
 
         <Page
@@ -74,12 +64,12 @@ export function Album() {
           className='right'
           side='right'
         >
-          {photos[index].text}
+          {mockedData?.image[index].post}
         </Page>
       </Section>
 
       {
-        index + 1 < photos.length &&
+        index + 1 < mockedData!?.image.length &&
         <Arrow title='Next Page'>
           <ArrowForwardIos fontSize='large' onClick={nextPage} />
         </Arrow>
