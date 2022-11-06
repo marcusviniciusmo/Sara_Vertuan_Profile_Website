@@ -1,47 +1,37 @@
+import { useEffect, useState } from "react";
 import { useGlobalContext } from "context";
 import { Link } from "react-router-dom";
-import { Home, Person, Chat, Collections, Call } from '@mui/icons-material';
+import { MenuProps } from "types/Menu";
+import { MockedData } from "mocks/Menu";
 import { MenuContainer, MenuOption } from './styles';
 
 export function Menu() {
-  const { theme } = useGlobalContext();
+  const [mockedData, setMockedData] = useState<MenuProps>();
+  const { language, theme } = useGlobalContext();
+
+  useEffect(() => {
+    setMockedData(MockedData.find((data) => data.language === language));
+  }, [language]);
 
   return (
     <MenuContainer>
-      <Link to='/' className="noUnderline" title="Início">
-        <MenuOption theme={theme} hasBorder>
-          <Home fontSize="large"/>
-          <span>Início</span>
-        </MenuOption>
-      </Link>
-
-      <Link to='/aboutMe' className="noUnderline" title="Sobre Mim">
-        <MenuOption theme={theme}>
-          <Person fontSize="large"/>
-          <span>Sobre Mim</span>
-        </MenuOption>
-      </Link>
-
-      <Link to='/testimonies' className="noUnderline" title="Depoimentos">
-        <MenuOption theme={theme}>
-          <Chat fontSize="large"/>
-          <span>Depoimentos</span>
-        </MenuOption>
-      </Link>
-
-      <Link to='/gallery' className="noUnderline" title="Galeria">
-        <MenuOption theme={theme} hasBorder>
-          <Collections fontSize="large"/>
-          <span>Galeria</span>
-        </MenuOption>
-      </Link>
-
-      <Link to='/contact' className="noUnderline" title="Contato">
-        <MenuOption theme={theme} hasBorder>
-          <Call fontSize="large"/>
-          <span>Contato</span>
-        </MenuOption>
-      </Link>
+      {
+        mockedData?.routes.map((route) => {
+          return (
+            <Link
+              to={route.link}
+              className="noUnderline"
+              title={route.title}
+              key={`${route.title}`}
+            >
+              <MenuOption theme={theme} hasBorder={route.hasBorder}>
+                <route.icon fontSize="large" />
+                <span>{route.title}</span>
+              </MenuOption>
+            </Link>
+          )
+        })
+      }
     </MenuContainer>
   );
 };
