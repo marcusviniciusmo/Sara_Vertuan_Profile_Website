@@ -1,26 +1,34 @@
+import { useEffect, useState } from 'react';
 import { useGlobalContext } from 'context';
 import { ReactCountryFlag } from 'react-country-flag';
+import { LanguageProps } from 'types/Language';
+import { MockedData } from 'mocks/Language';
 import { LayoutLanguage, FlagSection } from './styles';
 
 export function Language() {
-  const { setLanguage } = useGlobalContext();
+  const [mockedData, setMockedData] = useState<LanguageProps>();
+  const { language, setLanguage } = useGlobalContext();
+
+  useEffect(() => {
+    setMockedData(MockedData.find((data) => data.language === language));
+  }, [language]);
 
   return (
     <LayoutLanguage>
-      <FlagSection title='Português' onClick={() => setLanguage('PT')}>
-        <ReactCountryFlag countryCode='BR' />
-        <strong>PT</strong>
-      </FlagSection>
-
-      <FlagSection title='English' onClick={() => setLanguage('EN')}>
-        <ReactCountryFlag countryCode='GB' />
-        <strong>EN</strong>
-      </FlagSection>
-
-      <FlagSection title='Italiano' onClick={() => setLanguage('IT')}>
-        <ReactCountryFlag countryCode='IT' />
-        <strong>IT</strong>
-      </FlagSection>
+      {
+        mockedData?.data.map((data) => {
+          return (
+            <FlagSection
+              title={data.title}
+              key={data.title}
+              onClick={() => setLanguage(data.initials)}
+            >
+              <ReactCountryFlag countryCode={data.countryCode} />
+              <strong>{data.initials}</strong>
+            </FlagSection>
+          )
+        })
+      }
     </LayoutLanguage>
   );
 };
