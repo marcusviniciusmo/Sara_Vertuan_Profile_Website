@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { useGlobalContext } from 'context';
 import { LightMode, DarkMode } from '@mui/icons-material';
@@ -10,9 +11,21 @@ export function Theme() {
   const [mockedData, setMockedData] = useState<ThemeProps>();
   const { language, theme, setTheme } = useGlobalContext();
 
+  const handleBackground = () => {
+    const body = document.querySelector('body');
+
+    if (body) {
+      body.style.background = `var(--background${theme})`;
+    };
+  };
+
   useEffect(() => {
     setMockedData(MockedData.find((data) => data.language === language));
   }, [language]);
+
+  useEffect(() => {
+    handleBackground();
+  }, [theme]);
 
   return (
     <Switch.Root
