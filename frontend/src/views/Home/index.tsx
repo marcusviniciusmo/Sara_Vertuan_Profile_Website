@@ -13,31 +13,6 @@ export function Home() {
       <Interface>
         <Album />
 
-        <h1>INÍCIO View</h1>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
-        <h3>AQUI VAI UMA FOTO</h3>
         <p>
           PORQUE DEVO INVESTIR NUMA CAPA PROFISSIONAL?
 
