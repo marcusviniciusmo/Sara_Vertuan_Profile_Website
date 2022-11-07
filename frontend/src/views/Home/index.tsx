@@ -6,10 +6,12 @@ import { Album } from "components/Album";
 import { HomeProps } from "types/Home";
 import { MockedData } from "mocks/Home";
 import { Interface } from "styles/Interface";
+import { ContainerText, Title, Text } from "./styles";
+import './styles.css';
 
 export function Home() {
   const [mockedData, setMockedData] = useState<HomeProps>();
-  const { language } = useGlobalContext();
+  const { language, theme } = useGlobalContext();
 
   useEffect(() => {
     setMockedData(MockedData.find((data) => data.language === language));
@@ -21,11 +23,13 @@ export function Home() {
 
       <Sidebar />
 
-      <Interface>
+      <Interface className="homeInterface">
         <Album />
 
-        <strong>{mockedData?.title}</strong>
-        <span>{mockedData?.span}</span>
+        <ContainerText theme={theme}>
+          <Title>{mockedData?.title}</Title>
+          <Text>{mockedData?.span}</Text>
+        </ContainerText>
 
       </Interface>
     </div>
