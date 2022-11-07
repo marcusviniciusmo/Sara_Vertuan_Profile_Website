@@ -13,10 +13,6 @@ export function Album() {
   const [index, setIndex] = useState<number>(0);
   const { language, theme } = useGlobalContext();
 
-  useEffect(() => {
-    setMockedData(MockedData.find((data) => data.language === language));
-  }, [language]);
-
   const previousPage = () => {
     if (index > 0) {
       const previousPage = document.querySelector('#photoAlbumLeft');
@@ -46,18 +42,22 @@ export function Album() {
 
   const showArrows = () => {
     if (index <= 0) {
-      document.getElementById('arrowLeft')!.style.opacity = '0';
-      document.getElementById('arrowRight')!.style.opacity = '1';
-    }
-    else {
-      document.getElementById('arrowLeft')!.style.opacity = '1';
-      document.getElementById('arrowRight')!.style.opacity = '0';
+      document.getElementById('arrowLeft')!.style.zIndex = '-1';
+      document.getElementById('arrowRight')!.style.zIndex = '0';
+    } else if (index + 1>= mockedData!?.image.length) {
+      document.getElementById('arrowRight')!.style.zIndex = '-1';
+    } else  {
+      document.getElementById('arrowLeft')!.style.zIndex = '0';
     }
   };
 
   useEffect(() => {
     showArrows();
   }, [index]);
+
+  useEffect(() => {
+    setMockedData(MockedData.find((data) => data.language === language));
+  }, [language]);
 
   return (
     <Container>
