@@ -25,7 +25,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   gap: 3rem;
 `;
 
@@ -38,8 +38,6 @@ export const Section = styled.section<SectionProps>`
   --duration: 0.5s;
   --ease-in-out: ease-in-out;
   
-  width: 80%;
-  height: 80vh;
   border-radius: 1vh;
   box-shadow: 0 0.5rem 1rem var(--colorSecondary${(props) => props.theme});
   display: flex;
@@ -47,6 +45,7 @@ export const Section = styled.section<SectionProps>`
   position: relative;
   transform: scale(1);
   animation: ${zoom} calc(var(--duration) * 2) var(--ease-in-out);
+  overflow: hidden;
 `;
 
 export const Page = styled.div<PageProps>`
@@ -55,10 +54,9 @@ export const Page = styled.div<PageProps>`
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
-  width: 50%;
-  height: 100%;
+  width: 35.42rem;
+  height: 57.24rem;
   border-radius: ${(props) => props.side === 'left' ? '1vh 0 0 1vh' : '0 1vh 1vh 0'};
-  position: absolute;
   top: 0;
   left: ${(props) => props.side === 'left' && 0};
   right: ${(props) => props.side === 'right' && 0};
@@ -68,7 +66,9 @@ export const Page = styled.div<PageProps>`
 `;
 
 export const Title = styled.strong`
-  margin-block: 4rem;
+  width: 40rem;
+  text-align: center;
+  margin: 4rem auto;
   display: flex;
   justify-content: center;
 `;
