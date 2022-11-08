@@ -1,3 +1,9 @@
+#albumComponent {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 .left {
   transform: rotateY(0deg);
   transition-timing-function: cubic-bezier(0, 0, 0.3, 1);
