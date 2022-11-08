@@ -17,3 +17,6 @@ npm i @types/styled-components
 
 // React Country Flag
 npm i react-country-flag
+
+// Radix-UI Dialog
+npm install @radix-ui/react-dialog
