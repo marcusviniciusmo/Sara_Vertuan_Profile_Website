@@ -80,20 +80,20 @@ export const Info = styled.span`
   opacity: 0.7;
 `;
 
-export const Synopsis = styled.div`
-  text-align: justify;
-  padding-inline: 3.5rem;
+export const ButtonsArea = styled.div`
+  margin-top: 10rem;
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 3rem;
 `;
 
 export const Button = styled.a`
-  background: var(--colorSecondary${(props) => props.theme});
-  color: var(--background${(props) => props.theme});
+  background: var(--background${(props) => props.theme});
+  color: var(--colorPrimary${(props) => props.theme});
+  box-shadow: 0.2rem 0.2rem 0.5rem;
   border-radius: 0.4rem;
-  width: 15rem;
-  height: 6rem;
+  width: 13rem;
+  height: 5.2rem;
   margin: 0 auto;
   display: flex;
   align-items: center;

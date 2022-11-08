@@ -7,7 +7,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { Synopsis } from 'modals/Synopsis';
 import { AlbumProps } from 'types/Album';
 import { MockedData } from 'mocks/Album';
-import { Container, Arrow, Section, Page, Title, Info, Button } from './styles';
+import { Container, Arrow, Section, Page, Title, Info, Button, ButtonsArea } from './styles';
 import './styles.css';
 
 export function Album() {
@@ -89,23 +89,26 @@ export function Album() {
             ${mockedData?.image[index].year}`}
           </Info>
 
-          <Dialog.Root>
-            <Dialog.Trigger>
-              {/* <Synopsis> */}
-                <span>{mockedData?.image[index].synopsis}</span>
-                <Button
-                  href={mockedData?.image[index].link}
-                  className='noUnderline'
-                  target={'_blank'}
-                  theme={theme}
-                >
-                  POST
+          <ButtonsArea>
+            <Dialog.Root>
+              <Dialog.Trigger className='dialogTrigger'>
+                <Button theme={theme}>
+                  SINOPSE
                 </Button>
-              {/* </Synopsis> */}
-            </Dialog.Trigger>
+              </Dialog.Trigger>
 
-            <Synopsis />
-          </Dialog.Root>
+              <Button
+                href={mockedData?.image[index].link}
+                className='noUnderline'
+                target={'_blank'}
+                theme={theme}
+              >
+                Check post
+              </Button>
+
+              <Synopsis synopsis={mockedData!?.image[index].synopsis} />
+            </Dialog.Root>
+          </ButtonsArea>
         </Page>
       </Section>
 
