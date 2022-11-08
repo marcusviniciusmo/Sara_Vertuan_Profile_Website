@@ -18,11 +18,13 @@ export function Synopsis({ synopsis }: SynopsisProps) {
           color: `var(--colorPrimary${theme})`
         }}
       >
-        <Dialog.Close>
+        <Dialog.Close className={`iconClose${theme}`} title='Fechar'>
           <Close />
         </Dialog.Close>
 
-        <p>{synopsis}</p>
+        <Dialog.Title>Sinopse</Dialog.Title>
+
+        <span>{synopsis}</span>
       </Dialog.Content>
     </Dialog.Portal>
   );
