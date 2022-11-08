@@ -96,7 +96,10 @@ export function Album() {
                   {mockedData?.labelPost}
                 </Button>
 
-                <Synopsis synopsis={mockedData!?.image[index].synopsis} />
+                <Synopsis
+                  title={mockedData!?.labelSynopsis}
+                  synopsis={mockedData!?.image[index].synopsis}
+                />
               </Dialog.Root>
             </ButtonsArea>
           </Page>
