@@ -78,7 +78,7 @@ export function Album() {
           className='right'
           side='right'
         >
-          <Title>{mockedData?.image[index].post}</Title>
+          <Title>{mockedData?.image[index].title}</Title>
 
           <Info>{mockedData?.image[index].author}</Info>
           <Info>{mockedData?.image[index].year}</Info>

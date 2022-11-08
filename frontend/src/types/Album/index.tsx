@@ -3,9 +3,9 @@ export interface AlbumProps {
   image: {
     id: number;
     url: string;
-    post: string;
+    title: string;
     author: string;
-    year: string;
+    year: number;
     publisher: string;
     synopsis: string;
     link: string;
