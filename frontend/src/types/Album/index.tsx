@@ -1,5 +1,11 @@
 export interface AlbumProps {
   language: string;
+  arrows: {
+    prev: string;
+    next: string;
+  };
+  labelSynopsis: string;
+  labelPost: string;
   image: {
     id: number;
     url: string;

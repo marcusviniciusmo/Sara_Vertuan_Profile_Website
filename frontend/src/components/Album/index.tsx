@@ -53,7 +53,7 @@ export function Album() {
     <div id='albumComponent'>
       <span>{`${index + 1} / ${mockedData?.image.length}`}</span>
       <Container>
-        <Arrow title='Previous Page' id='arrowLeft'>
+        <Arrow title={mockedData?.arrows.prev} id='arrowLeft'>
           <ArrowBackIos fontSize='large' onClick={previousPage} />
         </Arrow>
 
@@ -83,7 +83,7 @@ export function Album() {
               <Dialog.Root>
                 <Dialog.Trigger className='dialogTrigger'>
                   <Button theme={theme}>
-                    SINOPSE
+                    {mockedData?.labelSynopsis}
                   </Button>
                 </Dialog.Trigger>
 
@@ -93,7 +93,7 @@ export function Album() {
                   target={'_blank'}
                   theme={theme}
                 >
-                  Check post
+                  {mockedData?.labelPost}
                 </Button>
 
                 <Synopsis synopsis={mockedData!?.image[index].synopsis} />
@@ -103,7 +103,7 @@ export function Album() {
         </Section>
 
 
-        <Arrow title='Next Page' id='arrowRight'>
+        <Arrow title={mockedData?.arrows.next} id='arrowRight'>
           <ArrowForwardIos fontSize='large' onClick={nextPage} />
         </Arrow>
       </Container>

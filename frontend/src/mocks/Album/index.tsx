@@ -23,6 +23,12 @@ import Cover20 from '../../assets/album/20_o_circulo_de_pedra.jpg';
 export const MockedData: AlbumProps[] = [
   {
     language: 'PT',
+    arrows: {
+      prev: 'Página Anterior',
+      next: 'Próxima Página'
+    },
+    labelSynopsis: 'SINOPSE',
+    labelPost: 'Ver post',
     image: [
       {
         id: 1,
@@ -444,6 +450,12 @@ export const MockedData: AlbumProps[] = [
   },
   {
     language: 'EN',
+    arrows: {
+      prev: 'Previous Page',
+      next: 'Next Page'
+    },
+    labelSynopsis: 'SYNOPSIS',
+    labelPost: 'Check post',
     image: [
       {
         id: 1,
@@ -861,6 +873,12 @@ export const MockedData: AlbumProps[] = [
   },
   {
     language: 'IT',
+    arrows: {
+      prev: 'Pagina Precedente',
+      next: 'Pagina Successiva'
+    },
+    labelSynopsis: 'SINOSSI',
+    labelPost: 'Vedi post',
     image: [
       {
         id: 1,
