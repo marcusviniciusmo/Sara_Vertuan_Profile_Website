@@ -3,9 +3,11 @@
 import { useEffect, useState } from 'react';
 import { useGlobalContext } from 'context';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
+import * as Dialog from '@radix-ui/react-dialog';
+import { Synopsis } from 'modals/Synopsis';
 import { AlbumProps } from 'types/Album';
 import { MockedData } from 'mocks/Album';
-import { Container, Arrow, Section, Page, Title, Info, Synopsis, Button } from './styles';
+import { Container, Arrow, Section, Page, Title, Info, Button } from './styles';
 import './styles.css';
 
 export function Album() {
@@ -44,9 +46,9 @@ export function Album() {
     if (index <= 0) {
       document.getElementById('arrowLeft')!.style.zIndex = '-1';
       document.getElementById('arrowRight')!.style.zIndex = '0';
-    } else if (index + 1>= mockedData!?.image.length) {
+    } else if (index + 1 >= mockedData!?.image.length) {
       document.getElementById('arrowRight')!.style.zIndex = '-1';
-    } else  {
+    } else {
       document.getElementById('arrowLeft')!.style.zIndex = '0';
     }
   };
@@ -81,20 +83,29 @@ export function Album() {
           <Title>{mockedData?.image[index].title}</Title>
 
           <Info>{mockedData?.image[index].author}</Info>
-          <Info>{mockedData?.image[index].year}</Info>
-          <Info>{mockedData?.image[index].publisher}</Info>
 
-          <Synopsis>
-            <span>{mockedData?.image[index].synopsis}</span>
-            <Button
-              href={mockedData?.image[index].link}
-              className='noUnderline'
-              target={'_blank'}
-              theme={theme}
-            >
-              POST
-            </Button>
-          </Synopsis>
+          <Info>
+            {`${mockedData?.image[index].publisher} - 
+            ${mockedData?.image[index].year}`}
+          </Info>
+
+          <Dialog.Root>
+            <Dialog.Trigger>
+              {/* <Synopsis> */}
+                <span>{mockedData?.image[index].synopsis}</span>
+                <Button
+                  href={mockedData?.image[index].link}
+                  className='noUnderline'
+                  target={'_blank'}
+                  theme={theme}
+                >
+                  POST
+                </Button>
+              {/* </Synopsis> */}
+            </Dialog.Trigger>
+
+            <Synopsis />
+          </Dialog.Root>
         </Page>
       </Section>
 

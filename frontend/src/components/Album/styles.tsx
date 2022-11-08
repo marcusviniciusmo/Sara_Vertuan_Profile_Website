@@ -66,7 +66,6 @@ export const Page = styled.div<PageProps>`
 `;
 
 export const Title = styled.strong`
-  width: 40rem;
   text-align: center;
   margin: 4rem auto;
   display: flex;
@@ -78,6 +77,7 @@ export const Info = styled.span`
   padding-inline: 3.5rem;
   display: flex;
   flex-direction: column;
+  opacity: 0.7;
 `;
 
 export const Synopsis = styled.div`
