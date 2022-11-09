@@ -1,5 +1,6 @@
 import { Header } from "components/Header";
 import { Sidebar } from "components/Sidebar"
+import { Card } from "components/Card";
 import { Interface } from "styles/Interface";
 
 export function Testimonies() {
@@ -11,6 +12,7 @@ export function Testimonies() {
 
       <Interface>
         <h1>DEPOIMENTOS View</h1>
+        {/* <Card /> */}
         <h3>Gabriela Maya</h3>
         <h5>Autora</h5>
         <p>
