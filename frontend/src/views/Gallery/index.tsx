@@ -11,32 +11,7 @@ export function Gallery() {
       <Sidebar />
 
       <Interface>
-        <h1>GALERIA View</h1>
         <GallerySlider />
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        <h3>AQUI VAI UMA IMAGEM</h3>
       </Interface>
     </div>
   );
