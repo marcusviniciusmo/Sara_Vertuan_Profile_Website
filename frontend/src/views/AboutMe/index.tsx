@@ -5,10 +5,12 @@ import { Sidebar } from "components/Sidebar"
 import { Interface } from "styles/Interface";
 import { AboutMeProps } from "types/AboutMe";
 import { MockedData } from "mocks/AboutMe";
+import Me from '../../assets/aboutMe/aboutMe.jpg';
+import { Container, Picture, Text, Strong, Span } from './styles';
 
 export function AboutMe() {
   const [mockedData, setMockedData] = useState<AboutMeProps>();
-  const { language } = useGlobalContext();
+  const { language, theme } = useGlobalContext();
 
   useEffect(() => {
     setMockedData(MockedData.find((data) => data.language === language));
@@ -21,12 +23,15 @@ export function AboutMe() {
       <Sidebar />
 
       <Interface>
-        <h1>SOBRE MIM View</h1>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-        
-        <strong>{mockedData?.strong}</strong>
-        <span>{mockedData?.text}</span>
+        <Container>
+          <Picture cover={Me} theme={theme} />
 
+          <Text>
+            <Strong>{mockedData?.strong}</Strong>
+            <Span>{mockedData?.text}</Span>
+          </Text>
+        </Container>
+        {/* 
         <h5>Whatsapp</h5>
         <h6>+5532261228</h6>
         <h5>E-mail</h5>
@@ -38,7 +43,7 @@ export function AboutMe() {
         <h5>Behancé</h5>
         <h6>behance.net/saravertuan</h6>
         <h5>Linkedin</h5>
-        <h6>linkedin.com/in/saracvertuan/</h6>
+        <h6>linkedin.com/in/saracvertuan/</h6> */}
       </Interface>
     </div>
   );
