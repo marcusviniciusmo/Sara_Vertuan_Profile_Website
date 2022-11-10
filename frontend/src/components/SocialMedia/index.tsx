@@ -1,13 +1,14 @@
 import { useGlobalContext } from "context";
 import { BsWhatsapp, BsEnvelope, BsFacebook, BsInstagram, BsBehance, BsLinkedin } from 'react-icons/bs';
-import { Container, Content, Strong, MediasArea, Media, Link } from "./styles";
+import { ContactCardContainer, ContactCardContent } from "styles/ContactCard";
+import { Strong, MediasArea, Media, Link } from "./styles";
 
 export function SocialMedia() {
   const { theme } = useGlobalContext();
 
   return (
-    <Container theme={theme}>
-      <Content theme={theme}>
+    <ContactCardContainer theme={theme} width={35}>
+      <ContactCardContent theme={theme} width={35}>
         <Strong>Confira Minhas Redes Sociais</Strong>
 
         <MediasArea>
@@ -47,7 +48,7 @@ export function SocialMedia() {
             </Media>
           </Link>
         </MediasArea>
-      </Content>
-    </Container>
+      </ContactCardContent>
+    </ContactCardContainer>
   );
 };

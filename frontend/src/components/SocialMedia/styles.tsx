@@ -1,50 +1,8 @@
-import styled, { keyframes } from "styled-components";
-
-export const borderEffect = keyframes`
-  100% {
-    transform: rotate(360deg);
-  }
-`;
+import styled from "styled-components";
 
 interface ContainerProps {
   theme: string;
 };
-
-export const Container = styled.div<ContainerProps>`
-  width: 35rem;
-  height: 50rem;
-  border-radius: 0.8rem;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transform: translate(-50% -50%);
-  box-sizing: border-box;
-  border: 0.05rem solid;
-  
-  &::before {
-    content:"";
-    background: conic-gradient(
-      var(--background${(props) => props.theme}), #595959);
-      position: absolute;
-      width: 35rem;
-      height: 50rem;
-      animation: ${borderEffect} 10s linear infinite;
-      transition: 10s ease;
-    }
-`;
-
-export const Content = styled.div<ContainerProps>`
-  background: var(--background${(props) => props.theme});
-  width: 34.7rem;
-  height: 49.7rem;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-  z-index: 998;
-`;
 
 export const Strong = styled.strong`
   font-size: 2rem;
