@@ -4,6 +4,7 @@ import { SocialMedia } from "components/SocialMedia";
 import { Form } from "components/Form";
 import { Budget } from "components/Budget";
 import { Interface } from "styles/Interface";
+import './styles.css';
 
 export function Contact() {
   return (
@@ -12,9 +13,7 @@ export function Contact() {
 
       <Sidebar />
 
-      <Interface>
-        <h1>CONTATO View</h1>
-        
+      <Interface className="contactInterface">
         <SocialMedia />
 
         <Form />
