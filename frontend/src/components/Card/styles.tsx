@@ -16,10 +16,8 @@ export const Container = styled.div<ContainerProps>`
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  filter: blur(0.1rem);
   
   &:hover {
-    filter: blur(0);
     opacity: 0.7;
   }
 `;
