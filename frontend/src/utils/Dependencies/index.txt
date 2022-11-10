@@ -26,3 +26,6 @@ npm install vanilla-tilt
 
 // React Icons
 npm install react-icons --save
+
+// SweetAlert 2
+npm install sweetalert2
