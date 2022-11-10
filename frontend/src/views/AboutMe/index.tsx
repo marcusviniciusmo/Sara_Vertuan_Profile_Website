@@ -31,19 +31,6 @@ export function AboutMe() {
             <Span>{mockedData?.text}</Span>
           </Text>
         </Container>
-        {/* 
-        <h5>Whatsapp</h5>
-        <h6>+5532261228</h6>
-        <h5>E-mail</h5>
-        <h6>saracvertuan@gmail.com</h6>
-        <h5>Facebook</h5>
-        <h6>facebook.com/designsaravertuan</h6>
-        <h5>Instagram</h5>
-        <h6>instagram.com/designersaravertuan</h6>
-        <h5>Behancé</h5>
-        <h6>behance.net/saravertuan</h6>
-        <h5>Linkedin</h5>
-        <h6>linkedin.com/in/saracvertuan/</h6> */}
       </Interface>
     </div>
   );
