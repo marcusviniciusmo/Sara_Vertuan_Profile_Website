@@ -20,3 +20,6 @@ npm i react-country-flag
 
 // Radix-UI Dialog
 npm install @radix-ui/react-dialog
+
+// Vanilla-Tilt
+npm install vanilla-tilt
