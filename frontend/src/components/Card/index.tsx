@@ -1,19 +1,21 @@
+import { useGlobalContext } from "context";
 import { CardProps } from "types/Card";
+import { Container, Figure, Content, Name, Role, Text } from "./styles";
 
 export function Card({ card }: CardProps) {
+  const { theme } = useGlobalContext();
+
   return (
-    <div>
-      Card
+    <Container theme={theme}> 
+      <Figure>
+        <img src="a" alt={`${card.role} ${card.name}`} />
+      </Figure>
 
-      <div>
-        <h3>AQUI VAI UMA IMAGEM</h3>
-      </div>
-
-      <div>
-        <strong>{card.name}</strong>
-        <span>{card.role}</span>
-        <p>{card.text}</p>
-      </div>
-    </div>
+      <Content>
+        <Name>{card.name}</Name>
+        <Role>{card.role}</Role>
+        <Text>{card.text}</Text>
+      </Content>
+    </Container>
   );
 };
