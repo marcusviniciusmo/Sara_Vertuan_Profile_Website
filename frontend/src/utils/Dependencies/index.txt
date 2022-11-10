@@ -23,3 +23,6 @@ npm install @radix-ui/react-dialog
 
 // Vanilla-Tilt
 npm install vanilla-tilt
+
+// React Icons
+npm install react-icons --save
