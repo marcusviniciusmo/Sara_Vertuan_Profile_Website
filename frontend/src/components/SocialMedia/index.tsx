@@ -1,31 +1,52 @@
 import { useGlobalContext } from "context";
-import { Container, Content } from "./styles";
+import { BsWhatsapp, BsEnvelope, BsFacebook, BsInstagram, BsBehance, BsLinkedin } from 'react-icons/bs';
+import { Container, Content, Strong, MediasArea, Media, Link } from "./styles";
 
 export function SocialMedia() {
-const { theme } = useGlobalContext();
+  const { theme } = useGlobalContext();
 
   return (
     <Container theme={theme}>
       <Content theme={theme}>
-        <h1>SOCIAL MEDIA Component</h1>
+        <Strong>Confira Minhas Redes Sociais</Strong>
 
-        <h4>Gostou do que  viu? Entre em contato e vamos conversar!</h4>
-        <h5>CONFIRA MINHAS REDES SOCIAIS</h5>
-        <h6>Facebook</h6>
-        <h6>Instagram</h6>
+        <MediasArea>
+          <Link href="https://web.whatsapp.com" target={'_blank'}>
+            <Media theme={theme} title='+5532261228'>
+              <BsWhatsapp />
+            </Media>
+          </Link>
 
-        <h5>Whatsapp</h5>
-        <h6>+5532261228</h6>
-        <h5>E-mail</h5>
-        <h6>saracvertuan@gmail.com</h6>
-        <h5>Facebook</h5>
-        <h6>facebook.com/designsaravertuan</h6>
-        <h5>Instagram</h5>
-        <h6>instagram.com/designersaravertuan</h6>
-        <h5>Behancé</h5>
-        <h6>behance.net/saravertuan</h6>
-        <h5>Linkedin</h5>
-        <h6>linkedin.com/in/saracvertuan/</h6>
+          <Link href="https://outlook.com" target={'_blank'}>
+            <Media theme={theme} title='saracvertuan@gmail.com'>
+              <BsEnvelope />
+            </Media>
+          </Link>
+
+          <Link href="https://facebook.com/designsaravertuan" target={'_blank'}>
+            <Media theme={theme} title='facebook.com/designsaravertuan'>
+              <BsFacebook />
+            </Media>
+          </Link>
+
+          <Link href="https://instagram.com/designersaravertuan" target={'_blank'}>
+            <Media theme={theme} title='instagram.com/designersaravertuan'>
+              <BsInstagram />
+            </Media>
+          </Link>
+
+          <Link href="https://behance.net/saravertuan" target={'_blank'}>
+            <Media theme={theme} title='behance.net/saravertuan'>
+              <BsBehance />
+            </Media>
+          </Link>
+
+          <Link href="https://linkedin.com/in/saracvertuan/" target={'_blank'}>
+            <Media theme={theme} title='linkedin.com/in/saracvertuan/'>
+              <BsLinkedin />
+            </Media>
+          </Link>
+        </MediasArea>
       </Content>
     </Container>
   );
