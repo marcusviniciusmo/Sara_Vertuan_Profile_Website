@@ -4,6 +4,7 @@ import { ReactCountryFlag } from 'react-country-flag';
 import { LanguageProps } from 'types/Language';
 import { MockedData } from 'mocks/Language';
 import { LayoutLanguage, FlagSection } from './styles';
+import './styles.css';
 
 export function Language() {
   const [mockedData, setMockedData] = useState<LanguageProps>();
@@ -24,7 +25,11 @@ export function Language() {
               onClick={() => setLanguage(data.initials)}
             >
               <ReactCountryFlag countryCode={data.countryCode} />
-              <strong>{data.initials}</strong>
+              <strong
+                className={data.initials === language ? 'languageSet' : ''}
+              >
+                {data.initials}
+              </strong>
             </FlagSection>
           )
         })
