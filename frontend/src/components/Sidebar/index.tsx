@@ -5,6 +5,7 @@ import { Menu } from "components/Menu";
 import { SidebarProps } from "types/Sidebar";
 import { MockedData } from "mocks/Sidebar";
 import { Container, Inner, Header, Content, Strong, Span } from "./styles";
+import './styles.css';
 
 export function Sidebar() {
   const [mockedData, setMockedData] = useState<SidebarProps>();
@@ -26,8 +27,8 @@ export function Sidebar() {
         <Header>
           {
             sidebarOpen
-            ? <Close fontSize="large" onClick={handleSidebar} />
-            : <MenuIcon fontSize="large" onClick={handleSidebar} />
+            ? <Close className="iconHandleSidebar" onClick={handleSidebar} />
+            : <MenuIcon className="iconHandleSidebar" onClick={handleSidebar} />
           }
         </Header>
 
