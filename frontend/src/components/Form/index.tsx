@@ -1,5 +1,6 @@
-import { useGlobalContext } from "context";
 import { useState } from "react";
+import { useGlobalContext } from "context";
+import { Notification } from "components/Notification";
 import { ContactCardContainer, ContactCardContent } from "styles/ContactCard";
 import { Strong, Span, Column, Input, Label, Row, Textarea, Button } from "./styles";
 import './styles.css';
@@ -16,10 +17,24 @@ export function Form() {
     setMessage('');
   };
 
+  const sendMessage = () => {
+    if (name && email && message) {
+      Notification.fire({
+        icon: 'success',
+        title: ' Mensagem enviada com sucesso!'
+      });
+    } else {
+      Notification.fire({
+        icon: 'error',
+        title: 'A mensagem não pôde ser enviada'
+      });
+    };
+  };
+
   return (
     <ContactCardContainer theme={theme} width={40}>
       <ContactCardContent theme={theme} width={40}>
-        <form action="mailto:saracvertuan@gmail.com" method="POST">
+        <form>
           <Strong>Gostou do que  viu?</Strong>
 
           <Span theme={theme}>
@@ -55,7 +70,7 @@ export function Form() {
               htmlFor="fieldEmail"
               className={email && 'filled'}
               theme={theme}
-              >
+            >
               E-mail
             </Label>
           </Column>
@@ -68,12 +83,12 @@ export function Form() {
               theme={theme}
               value={message}
               onChange={(e: any) => setMessage(e.target.value)}
-              />
+            />
             <Label
               htmlFor="fieldMessage"
               className={message && 'filled'}
               theme={theme}
-              >
+            >
               Mensagem
             </Label>
           </Column>
@@ -85,7 +100,12 @@ export function Form() {
               background='#596267'
               onClick={cleanInputs}
             />
-            <Button type="submit" value="Enviar" background='#0168D9' />
+            <Button
+              type="button"
+              value="Enviar"
+              background='#0168D9'
+              onClick={sendMessage}
+            />
           </Row>
         </form>
       </ContactCardContent>
