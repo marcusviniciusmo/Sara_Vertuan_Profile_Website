@@ -18,7 +18,7 @@ export const Container = styled.div<ContainerProps>`
   overflow: hidden;
   
   &:hover {
-    opacity: 0.7;
+    z-index: 99;
   }
 `;
 
