@@ -1,9 +1,19 @@
 import { useGlobalContext } from "context";
+import { useState } from "react";
 import { ContactCardContainer, ContactCardContent } from "styles/ContactCard";
 import { Strong, Span, Column, Input, Row, Textarea, Button } from "./styles";
 
 export function Form() {
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
   const { theme } = useGlobalContext();
+
+  const cleanInputs = () => {
+    setName('');
+    setEmail('');
+    setMessage('');
+  };
 
   return (
     <ContactCardContainer theme={theme} width={40}>
@@ -17,21 +27,42 @@ export function Form() {
 
           <Column>
             <label htmlFor="fieldName">Nome</label>
-            <Input type="text" id="fieldName" />
+            <Input
+              type="text"
+              id="fieldName"
+              value={name}
+              onChange={(e: any) => setName(e.target.value)}
+            />
           </Column>
 
           <Column>
             <label htmlFor="fieldEmail">E-mail</label>
-            <Input type="email" id="fieldEmail" />
+            <Input
+              type="email"
+              id="fieldEmail"
+              value={email}
+              onChange={(e: any) => setEmail(e.target.value)}
+            />
           </Column>
 
           <Column>
             <label htmlFor="fieldMessage">Mensagem</label>
-            <Textarea id="fieldMessage" cols={30} rows={10} />
+            <Textarea
+              id="fieldMessage"
+              cols={30}
+              rows={5}
+              value={message}
+              onChange={(e: any) => setMessage(e.target.value)}
+            />
           </Column>
 
           <Row>
-            <Button type="button" value="Limpar" background='#596267' />
+            <Button
+              type="button"
+              value="Limpar"
+              background='#596267'
+              onClick={cleanInputs}
+              />
             <Button type="submit" value="Enviar" background='#0168D9' />
           </Row>
         </form>
