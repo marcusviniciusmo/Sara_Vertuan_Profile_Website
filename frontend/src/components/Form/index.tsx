@@ -1,7 +1,8 @@
 import { useGlobalContext } from "context";
 import { useState } from "react";
 import { ContactCardContainer, ContactCardContent } from "styles/ContactCard";
-import { Strong, Span, Column, Input, Row, Textarea, Button } from "./styles";
+import { Strong, Span, Column, Input, Label, Row, Textarea, Button } from "./styles";
+import './styles.css';
 
 export function Form() {
   const [name, setName] = useState<string>('');
@@ -25,35 +26,56 @@ export function Form() {
             Entre em contato e vamos conversar!
           </Span>
 
-          <Column>
-            <label htmlFor="fieldName">Nome</label>
+          <Column className="inputContainer">
             <Input
               type="text"
               id="fieldName"
+              theme={theme}
               value={name}
               onChange={(e: any) => setName(e.target.value)}
             />
+            <Label
+              htmlFor="fieldName"
+              className={name && 'filled'}
+              theme={theme}
+            >
+              Nome
+            </Label>
           </Column>
 
-          <Column>
-            <label htmlFor="fieldEmail">E-mail</label>
+          <Column className="inputContainer">
             <Input
               type="email"
               id="fieldEmail"
+              theme={theme}
               value={email}
               onChange={(e: any) => setEmail(e.target.value)}
             />
+            <Label
+              htmlFor="fieldEmail"
+              className={email && 'filled'}
+              theme={theme}
+              >
+              E-mail
+            </Label>
           </Column>
 
-          <Column>
-            <label htmlFor="fieldMessage">Mensagem</label>
+          <Column className="inputContainer">
             <Textarea
               id="fieldMessage"
               cols={30}
               rows={5}
+              theme={theme}
               value={message}
               onChange={(e: any) => setMessage(e.target.value)}
-            />
+              />
+            <Label
+              htmlFor="fieldMessage"
+              className={message && 'filled'}
+              theme={theme}
+              >
+              Mensagem
+            </Label>
           </Column>
 
           <Row>
@@ -62,7 +84,7 @@ export function Form() {
               value="Limpar"
               background='#596267'
               onClick={cleanInputs}
-              />
+            />
             <Button type="submit" value="Enviar" background='#0168D9' />
           </Row>
         </form>

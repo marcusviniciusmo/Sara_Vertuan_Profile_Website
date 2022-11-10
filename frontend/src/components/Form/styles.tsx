@@ -1,8 +1,4 @@
-import { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
 import styled from "styled-components";
-
-interface InputProps extends InputHTMLAttributes<HTMLElement> {};
-interface TextareaProps extends TextareaHTMLAttributes<HTMLElement> {};
 
 interface ButtonProps {
   background?: string;
@@ -29,12 +25,33 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  position: relative;
 `;
 
-export const Input = styled.input<InputProps>`
+export const Input = styled.input.attrs(props => ({
+  theme: props.theme
+}))`
+  background: var(--background${props => props.theme});
+  color: var(--colorPrimary${props => props.theme});
   height: 2.5rem;
-  border-radius: 0.4rem;
   padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  transform: translate(0rem 2.9rem) scale(1);
+  transform-origin: top left;
+  transition: 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+  `;
+
+export const Label = styled.label.attrs(props => ({
+  theme: props.theme
+}))`
+  background: var(--background${props => props.theme});
+  color: var(--colorPrimary${props => props.theme});
+  font-size: 1.8rem;
+  margin: 1rem;
+  position: absolute;
+  pointer-events: none;
+  transition: 0.5s;
+  opacity: 0.5;
   `;
 
 export const Row = styled.div`
@@ -45,9 +62,13 @@ export const Row = styled.div`
   gap: 1rem;
   `;
 
-export const Textarea = styled.textarea<TextareaProps>`
+export const Textarea = styled.textarea.attrs(props => ({
+  theme: props.theme
+}))`
+  background: var(--background${props => props.theme});
+  color: var(--colorPrimary${props => props.theme});
   border-radius: 0.4rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
 `;
 
 export const Button = styled.input<ButtonProps>`
