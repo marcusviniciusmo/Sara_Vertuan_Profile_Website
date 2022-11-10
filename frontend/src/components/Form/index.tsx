@@ -1,5 +1,6 @@
 import { useGlobalContext } from "context";
 import { ContactCardContainer, ContactCardContent } from "styles/ContactCard";
+import { Strong, Span, Column, Input, Row, Textarea, Button } from "./styles";
 
 export function Form() {
   const { theme } = useGlobalContext();
@@ -7,18 +8,33 @@ export function Form() {
   return (
     <ContactCardContainer theme={theme} width={40}>
       <ContactCardContent theme={theme} width={40}>
-        <h1>FORM Component</h1>
+        <form action="mailto:saracvertuan@gmail.com" method="POST">
+          <Strong>Gostou do que  viu?</Strong>
 
-        <h3>AQUI VAI UM FORMULÁRIO</h3>
-        <h5>Nome</h5>
-        <h3>AQUI VAI UM CAMPO</h3>
-        <h5>E-mail</h5>
-        <h3>AQUI VAI UM CAMPO</h3>
-        <h5>Mensagem</h5>
-        <h3>AQUI VAI UM CAMPO</h3>
+          <Span theme={theme}>
+            Entre em contato e vamos conversar!
+          </Span>
 
-        <h5>Enviar</h5>
-        <h3>AQUI VAI UM BOTÃO</h3>
+          <Column>
+            <label htmlFor="fieldName">Nome</label>
+            <Input type="text" id="fieldName" />
+          </Column>
+
+          <Column>
+            <label htmlFor="fieldEmail">E-mail</label>
+            <Input type="email" id="fieldEmail" />
+          </Column>
+
+          <Column>
+            <label htmlFor="fieldMessage">Mensagem</label>
+            <Textarea id="fieldMessage" cols={30} rows={10} />
+          </Column>
+
+          <Row>
+            <Button type="button" value="Limpar" background='#596267' />
+            <Button type="submit" value="Enviar" background='#0168D9' />
+          </Row>
+        </form>
       </ContactCardContent>
     </ContactCardContainer>
   );
