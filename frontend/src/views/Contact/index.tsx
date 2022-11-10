@@ -1,5 +1,6 @@
 import { Header } from "components/Header";
 import { Sidebar } from "components/Sidebar"
+import { Budget } from "components/Budget";
 import { Interface } from "styles/Interface";
 
 export function Contact() {
@@ -27,7 +28,7 @@ export function Contact() {
         <h5>Enviar</h5>
         <h3>AQUI VAI UM BOTÃO</h3>
 
-        <h3>AQUI VAI UM LINK P/ ORÇAMENTO</h3>
+        <Budget />
       </Interface>
     </div>
   );
