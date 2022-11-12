@@ -4,6 +4,6 @@ export interface SynopsisMocks {
 };
 
 export interface SynopsisProps {
-  title: string;
-  synopsis: string;
+  title: string | undefined;
+  synopsis: string | undefined;
 };

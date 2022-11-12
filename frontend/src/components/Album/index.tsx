@@ -3,12 +3,12 @@
 import { useEffect, useState } from 'react';
 import { useGlobalContext } from 'context';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
-import * as Dialog from '@radix-ui/react-dialog';
-import { Synopsis } from 'modals/Synopsis';
+import { Page } from 'components/Page';
 import { AlbumProps } from 'types/Album';
 import { MockedData } from 'mocks/Album';
-import { Container, Arrow, Section, Page, Title, Info, Button, ButtonsArea } from './styles';
+import { Container, Arrow, Section } from './styles';
 import './styles.css';
+
 
 export function Album() {
   const [mockedData, setMockedData] = useState<AlbumProps>();
@@ -69,42 +69,15 @@ export function Album() {
             id='photoAlbumRight'
             className='right'
             side='right'
-          >
-            <Title>{mockedData?.image[index].title}</Title>
-
-            <Info>{mockedData?.image[index].author}</Info>
-
-            <Info>
-              {`${mockedData?.image[index].publisher} - 
-            ${mockedData?.image[index].year}`}
-            </Info>
-
-            <ButtonsArea>
-              <Dialog.Root>
-                <Dialog.Trigger className='dialogTrigger'>
-                  <Button theme={theme}>
-                    {mockedData?.labelSynopsis}
-                  </Button>
-                </Dialog.Trigger>
-
-                <Button
-                  href={mockedData?.image[index].link}
-                  className='noUnderline'
-                  target={'_blank'}
-                  theme={theme}
-                >
-                  {mockedData?.labelPost}
-                </Button>
-
-                <Synopsis
-                  title={mockedData!?.labelSynopsis}
-                  synopsis={mockedData!?.image[index].synopsis}
-                />
-              </Dialog.Root>
-            </ButtonsArea>
-          </Page>
+            title={mockedData?.image[index].title}
+            author={mockedData?.image[index].author}
+            publisher={mockedData?.image[index].publisher}
+            labelSynopsis={mockedData?.labelSynopsis}
+            labelPost={mockedData?.labelPost}
+            link={mockedData?.image[index].link}
+            synopsis={mockedData!?.image[index].synopsis}
+          />
         </Section>
-
 
         <Arrow title={mockedData?.arrows.next} id='arrowRight'>
           <ArrowForwardIos fontSize='large' onClick={nextPage} />
