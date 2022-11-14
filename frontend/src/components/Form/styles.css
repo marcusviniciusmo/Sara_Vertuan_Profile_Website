@@ -1,7 +1,0 @@
-.inputContainer:focus-within label,
-.filled {
-  padding-inline: 2rem;
-  transform: translate(0rem, -2rem) scale(0.8);
-  transition: all 0.3s ease-in-out;
-  opacity: 1;
-}

@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGlobalContext } from "context";
 import { Notification } from "components/Notification";
+import { FormProps } from "types/Form";
+import { MockedData } from "mocks/Form";
 import { ContactCardContainer, ContactCardContent } from "styles/ContactCard";
 import { Strong, Span, Column, Input, Label, Row, Textarea, Button } from "./styles";
-import './styles.css';
 
 export function Form() {
+  const [mockedData, setMockedData] = useState<FormProps>();
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-  const { theme } = useGlobalContext();
+  
+  const { language, theme } = useGlobalContext();
+
+  useEffect(() => {
+    setMockedData(MockedData.find((data) => data.language === language));
+  }, [language]);
 
   const cleanInputs = () => {
     setName('');
@@ -21,27 +28,25 @@ export function Form() {
     if (name && email && message) {
       Notification.fire({
         icon: 'success',
-        title: ' Mensagem enviada com sucesso!'
+        title: mockedData?.notifications[0].text
       });
     } else {
       Notification.fire({
         icon: 'error',
-        title: 'A mensagem não pôde ser enviada'
+        title: mockedData?.notifications[1].text
       });
     };
   };
 
   return (
-    <ContactCardContainer theme={theme} width={40}>
-      <ContactCardContent theme={theme} width={40}>
+    <ContactCardContainer theme={theme}>
+      <ContactCardContent theme={theme}>
         <form>
-          <Strong>Gostou do que  viu?</Strong>
+          <Strong>{mockedData?.title}</Strong>
 
-          <Span theme={theme}>
-            Entre em contato e vamos conversar!
-          </Span>
+          <Span theme={theme}>{mockedData?.subtitle}</Span>
 
-          <Column className="inputContainer">
+          <Column>
             <Input
               type="text"
               id="fieldName"
@@ -54,11 +59,11 @@ export function Form() {
               className={name && 'filled'}
               theme={theme}
             >
-              Nome
+              {mockedData?.inputs[0].label}
             </Label>
           </Column>
 
-          <Column className="inputContainer">
+          <Column>
             <Input
               type="email"
               id="fieldEmail"
@@ -71,15 +76,15 @@ export function Form() {
               className={email && 'filled'}
               theme={theme}
             >
-              E-mail
+              {mockedData?.inputs[1].label}
             </Label>
           </Column>
 
-          <Column className="inputContainer">
+          <Column>
             <Textarea
               id="fieldMessage"
               cols={30}
-              rows={5}
+              rows={6}
               theme={theme}
               value={message}
               onChange={(e: any) => setMessage(e.target.value)}
@@ -89,21 +94,21 @@ export function Form() {
               className={message && 'filled'}
               theme={theme}
             >
-              Mensagem
+              {mockedData?.inputs[2].label}
             </Label>
           </Column>
 
           <Row>
             <Button
               type="button"
-              value="Limpar"
-              background='#596267'
+              value={mockedData?.buttons[0].label}
+              background='var(--bootstrapInfo)'
               onClick={cleanInputs}
             />
             <Button
               type="button"
-              value="Enviar"
-              background='#0168D9'
+              value={mockedData?.buttons[1].label}
+              background='var(--bootstrapPrimary)'
               onClick={sendMessage}
             />
           </Row>
