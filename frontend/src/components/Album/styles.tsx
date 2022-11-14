@@ -25,20 +25,17 @@ export const Container = styled.div`
 `;
 
 export const Arrow = styled.div`
-  transform: scale(1.8);
+  transform: scale(2);
   cursor: pointer;
 `;
 
 export const Section = styled.section<SectionProps>`
-  --duration: 0.5s;
-  --ease-in-out: ease-in-out;
-  
-  border-radius: 1vh;
   box-shadow: 0 0.5rem 1rem var(--colorSecondary${(props) => props.theme});
+  animation: ${zoom} calc(0.5s * 2) ease-in-out;
+  border-radius: 1rem;
   display: flex;
-  perspective: 200rem;
   position: relative;
   transform: scale(1);
-  animation: ${zoom} calc(var(--duration) * 2) var(--ease-in-out);
+  perspective: 200rem;
   overflow: hidden;
 `;

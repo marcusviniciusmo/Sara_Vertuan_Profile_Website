@@ -17,6 +17,9 @@ export const PageContainer = styled.div<PageContainerProps>`
   backface-visibility: hidden;
   width: 35.42rem;
   height: 57.24rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   top: 0;
   transition-property: transform;
   transition-duration: 0.5s;

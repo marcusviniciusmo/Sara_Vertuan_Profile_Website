@@ -2,6 +2,7 @@ import { useGlobalContext } from 'context';
 import { Synopsis } from 'modals/Synopsis';
 import * as Dialog from '@radix-ui/react-dialog';
 import { PageContainer, Title, Info, Footer, Button } from "./styles";
+import './styles.css';
 
 interface PageProps {
   children?: React.ReactNode;
@@ -17,6 +18,8 @@ interface PageProps {
   synopsis?: string;
   labelPost?: string;
   link?: string;
+  page?: number;
+  lengthAlbum?: number;
 };
 
 export function Page(props: PageProps) {
@@ -60,6 +63,8 @@ export function Page(props: PageProps) {
               synopsis={props.synopsis}
             />
             </Dialog.Root>
+
+            <span>{`${props.page} / ${props.lengthAlbum}`}</span>
           </Footer>
         </>
       }

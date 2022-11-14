@@ -1,17 +1,6 @@
-#albumComponent {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
 .left {
   transform: rotateY(0deg);
   transition-timing-function: cubic-bezier(0, 0, 0.3, 1);
-}
-
-.flipLeft {
-  transform: rotateY(180deg);
-  transition-timing-function: cubic-bezier(0.85, 0, 1, 1);
 }
 
 .right {
@@ -19,7 +8,7 @@
   transition-timing-function: cubic-bezier(0, 0, 0.3, 1);
 }
 
-.flipRight {
+.flip {
   transform: rotateY(180deg);
   transition-timing-function: cubic-bezier(0.85, 0, 1, 1);
 }
