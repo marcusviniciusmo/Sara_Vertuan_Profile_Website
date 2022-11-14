@@ -10,7 +10,7 @@ export function Budget() {
 
   const { language, theme } = useGlobalContext();
 
-  const urlBudget = '#';
+  const urlBudget = 'https://docs.google.com/forms/d/e/1FAIpQLSfIO_oPvEMiUK4eahgYNMpFlnZ2XBG7t9F_YMuT6Sb1Ofl2Ig/viewform';
 
   useEffect(() => {
     setMockeData(MockedData.find((data) => data.language === language));
