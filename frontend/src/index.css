@@ -2,13 +2,16 @@
 
 :root {
   --backgroundDark: #121212;
-  --backgroundLight: #FFFFFF;
   --colorPrimaryDark: #FFFFFF;
-  --colorPrimaryLight: rgba(0, 0, 0, 0.87);
   --colorSecondaryDark: rgba(255, 255, 255, 0.7);
-  --colorSecondaryLight: rgba(0, 0, 0, 0.6);
   --hoverDark: rgba(255, 255, 255, 0.08);
+
+  --backgroundLight: #FFFFFF;
+  --colorPrimaryLight: rgba(0, 0, 0, 0.87);
+  --colorSecondaryLight: rgba(0, 0, 0, 0.6);
   --hoverLight: rgba(0, 0, 0, 0.04);
+
+  --bootstrapPrimary: #0168D9;
 
   --widthSidebarOpened: 26rem;
   --widthSidebarClosed: 7.2rem;
