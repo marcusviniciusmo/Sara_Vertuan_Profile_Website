@@ -7,3 +7,11 @@ export interface CardProps {
     text: string;
   }
 };
+
+export interface CardContainerProps {
+  theme: string;
+};
+
+export interface CardFigureProps {
+  theme: string;
+}

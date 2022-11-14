@@ -13,6 +13,8 @@
 
   --bootstrapPrimary: #0168D9;
 
+  --max-z-index: 999;
+
   --widthSidebarOpened: 26rem;
   --widthSidebarClosed: 7.2rem;
   --widthSidebarIcon: 2.188rem;

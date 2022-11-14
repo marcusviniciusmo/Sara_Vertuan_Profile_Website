@@ -7,8 +7,8 @@ export function Card({ card }: CardProps) {
 
   return (
     <Container theme={theme}> 
-      <Figure>
-        <img src="a" alt={`${card.role} ${card.name}`} />
+      <Figure theme={theme}>
+        <img src={card.image} alt={`${card.role} ${card.name}`} />
       </Figure>
 
       <Content>
