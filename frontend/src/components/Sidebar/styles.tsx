@@ -36,6 +36,12 @@ export const Content = styled.div`
   align-items: center;
 `;
 
+export const Image = styled.img`
+  width: 10rem;
+  height: 10rem;
+  margin-block: 3rem;
+`;
+
 export const Strong = styled.strong`
   font-size: 3rem;
   margin-bottom: 0.5rem;
