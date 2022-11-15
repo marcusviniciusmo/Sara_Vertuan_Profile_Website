@@ -5,11 +5,15 @@
   --colorPrimaryDark: #FFFFFF;
   --colorSecondaryDark: rgba(255, 255, 255, 0.7);
   --hoverDark: rgba(255, 255, 255, 0.08);
+  --boxShadowDark: rgb(255 255 255 / 1);
+  --iconDarkMode:  #00008B;
 
   --backgroundLight: #FFFFFF;
   --colorPrimaryLight: rgba(0, 0, 0, 0.87);
   --colorSecondaryLight: rgba(0, 0, 0, 0.6);
   --hoverLight: rgba(0, 0, 0, 0.04);
+  --boxShadowLight: rgb(0 0 0 / 1);
+  --iconLightMode: #FF8C00;
 
   --bootstrapInfo: #14A2B8;
   --bootstrapPrimary: #0168D9;
@@ -23,8 +27,7 @@
   --widthSidebarClosed: 7.2rem;
   --widthSidebarIcon: 2.188rem;
 
-  font-size: 62.5%;
-  /* 1rem = 10px */
+  font-size: 62.5%; /* 1rem = 10px */
 }
 
 body {

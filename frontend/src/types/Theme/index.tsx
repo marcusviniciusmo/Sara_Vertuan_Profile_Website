@@ -3,3 +3,7 @@ export interface ThemeProps {
   lightTheme: string;
   darkTheme: string;
 };
+
+export interface ThemeRootProps {
+  theme: string;
+};

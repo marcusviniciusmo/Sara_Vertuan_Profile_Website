@@ -2,22 +2,17 @@
 import { useEffect, useState } from 'react';
 import { useGlobalContext } from 'context';
 import { LightMode, DarkMode } from '@mui/icons-material';
-import * as Switch from '@radix-ui/react-switch';
 import { ThemeProps } from 'types/Theme';
 import { MockedData } from 'mocks/Theme';
-import './styles.css';
+import { Root, Thumb } from './styles';
 
 export function Theme() {
   const [mockedData, setMockedData] = useState<ThemeProps>();
+
   const { language, theme, setTheme } = useGlobalContext();
 
-  const handleBackground = () => {
-    const body = document.querySelector('body');
-
-    if (body) {
-      body.style.background = `var(--background${theme})`;
-    };
-  };
+  const valueDark = 'Dark';
+  const valueLight = 'Light';
 
   useEffect(() => {
     setMockedData(MockedData.find((data) => data.language === language));
@@ -27,20 +22,30 @@ export function Theme() {
     handleBackground();
   }, [theme]);
 
+  const handleBackground = () => {
+    const body = document.querySelector('body');
+
+    if (body) {
+      body.style.background = `var(--background${theme})`;
+    };
+  };
+
   return (
-    <Switch.Root
-      className={`switchRoot${theme}`}
-      title={theme === 'Dark' ? mockedData?.darkTheme : mockedData?.lightTheme}
-      defaultChecked={theme === "Dark"}
-      onClick={() => setTheme(theme === "Dark" ? 'Light' : 'Dark')}
+    <Root
+      theme={theme}
+      title={theme === valueDark
+        ? mockedData?.darkTheme
+        : mockedData?.lightTheme}
+      defaultChecked={theme === valueDark}
+      onClick={() => setTheme(theme === valueDark ? valueLight : valueDark)}
     >
-      <Switch.Thumb className='switchThumb'>
+      <Thumb>
         {
-          theme === "Dark"
-            ? <DarkMode className={`switchIcon${theme}Mode`} />
-            : <LightMode className={`switchIcon${theme}Mode`} />
+          theme === valueDark
+            ? <DarkMode className={`switchIconDarkMode`} />
+            : <LightMode className={`switchIconLightMode`} />
         }
-      </Switch.Thumb>
-    </Switch.Root>
+      </Thumb>
+    </Root>
   );
 };
