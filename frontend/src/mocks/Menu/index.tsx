@@ -9,31 +9,36 @@ export const MockedData: MenuProps[] = [
         icon: Home,
         link: '/',
         title: 'Início',
-        hasBorder: true
+        hasBorder: true,
+        color: ''
       },
       {
         icon: Person,
         link: '/aboutMe',
         title: 'Sobre Mim',
-        hasBorder: false
+        hasBorder: false,
+        color: '#FFB74D'
       },
       {
         icon: Chat,
         link: '/testimonies',
         title: 'Depoimentos',
-        hasBorder: false
+        hasBorder: false,
+        color: '#8BC24A'
       },
       {
         icon: Collections,
         link: '/gallery',
         title: 'Galeria',
-        hasBorder: true
+        hasBorder: true,
+        color: '#1E88E5'
       },
       {
         icon: Call,
         link: '/contact',
         title: 'Contato',
-        hasBorder: true
+        hasBorder: true,
+        color: '#FF7043'
       },
     ]
   },
@@ -44,31 +49,36 @@ export const MockedData: MenuProps[] = [
         icon: Home,
         link: '/',
         title: 'Home',
-        hasBorder: true
+        hasBorder: true,
+        color: ''
       },
       {
         icon: Person,
         link: '/aboutMe',
         title: 'About Me',
-        hasBorder: false
+        hasBorder: false,
+        color: '#FFB74D'
       },
       {
         icon: Chat,
         link: '/testimonies',
         title: 'Testimonies',
-        hasBorder: false
+        hasBorder: false,
+        color: '#8BC24A'
       },
       {
         icon: Collections,
         link: '/gallery',
         title: 'Gallery',
-        hasBorder: true
+        hasBorder: true,
+        color: '#1E88E5'
       },
       {
         icon: Call,
         link: '/contact',
         title: 'Contact',
-        hasBorder: true
+        hasBorder: true,
+        color: '#FF7043'
       },
     ]
   },
@@ -79,31 +89,36 @@ export const MockedData: MenuProps[] = [
         icon: Home,
         link: '/',
         title: 'Inizio',
-        hasBorder: true
+        hasBorder: true,
+        color: ''
       },
       {
         icon: Person,
         link: '/aboutMe',
         title: 'Su di me',
-        hasBorder: false
+        hasBorder: false,
+        color: '#FFB74D'
       },
       {
         icon: Chat,
         link: '/testimonies',
         title: 'Deposizioni',
-        hasBorder: false
+        hasBorder: false,
+        color: '#8BC24A'
       },
       {
         icon: Collections,
         link: '/gallery',
         title: 'Galleria',
-        hasBorder: true
+        hasBorder: true,
+        color: '#1E88E5'
       },
       {
         icon: Call,
         link: '/contact',
         title: 'Contatto',
-        hasBorder: true
+        hasBorder: true,
+        color: '#FF7043'
       },
     ]
   },

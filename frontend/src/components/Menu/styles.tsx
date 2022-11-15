@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-
-interface MenuOptionProps {
-  theme: string;
-  hasBorder?: boolean; 
-};
+import { Link } from "react-router-dom";
+import { MenuOptionProps, MenuIconProps } from 'types/Menu';
 
 export const MenuContainer = styled.nav`
   margin-top: 3rem;
   display: grid;
+`;
+
+export const MenuLink = styled(Link)`
+  text-decoration: none;
 `;
 
 export const MenuOption = styled.div<MenuOptionProps>`
@@ -22,10 +23,15 @@ export const MenuOption = styled.div<MenuOptionProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 2.5rem;
+  gap: 3.5rem;
 
   &:hover {
     text-decoration: underline;
     background: var(--hover${(props) => props.theme});
   }
+`;
+
+export const MenuIcon = styled.div<MenuIconProps>`
+  color: ${(props) => props.color};
+  transform: scale(1.5);
 `;
