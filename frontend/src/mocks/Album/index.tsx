@@ -1,24 +1,24 @@
 import { AlbumProps } from "types/Album";
-import Cover01 from '../../assets/album/01_a_face_oculta_dos_versos.jpg';
-import Cover02 from '../../assets/album/02_sherlock_holmes_e_a_agencia_anticrimes.jpg';
-import Cover03 from '../../assets/album/03_minha_novela_turca_2.jpg';
-import Cover04 from '../../assets/album/04_markus_novelas_noturnas_livro_2.jpg';
-import Cover05 from '../../assets/album/05_uma_cancao_de_ano_novo.jpg';
-import Cover06 from '../../assets/album/06_incrivel_galaxia.jpg';
-import Cover07 from '../../assets/album/07_valek_novelas_noturnas_livro_1.jpg';
-import Cover08 from '../../assets/album/08_transmorfo.jpg';
-import Cover09 from '../../assets/album/09_tudo_inspira_e_respira_poesia.jpg';
-import Cover10 from '../../assets/album/10_de_vista_para_a_mesquita.jpg';
-import Cover11 from '../../assets/album/11_o_alvorecer_da_rosa.jpg';
-import Cover12 from '../../assets/album/12_no_fim_do_mundo.jpg';
-import Cover13 from '../../assets/album/13_um_sonho_real_um_absoluto_cliche.jpg';
-import Cover14 from '../../assets/album/14_depois_da_curva.jpg';
-import Cover15 from '../../assets/album/15_o_povoado_no_fim_do_mundo.jpg';
-import Cover16 from '../../assets/album/16_a_vovo_chamou_o_diabo_para_a_ceia.jpg';
-import Cover17 from '../../assets/album/17_a_casa_das_hostesses_encontros_e_solidao.jpg';
-import Cover18 from '../../assets/album/18_a_outra_ana.jpg';
-import Cover19 from '../../assets/album/19_minha_vida_um_dorama.jpg';
-import Cover20 from '../../assets/album/20_o_circulo_de_pedra.jpg';
+import Cover01 from 'assets/album/01_a_face_oculta_dos_versos.jpg';
+import Cover02 from 'assets/album/02_sherlock_holmes_e_a_agencia_anticrimes.jpg';
+import Cover03 from 'assets/album/03_minha_novela_turca_2.jpg';
+import Cover04 from 'assets/album/04_markus_novelas_noturnas_livro_2.jpg';
+import Cover05 from 'assets/album/05_uma_cancao_de_ano_novo.jpg';
+import Cover06 from 'assets/album/06_incrivel_galaxia.jpg';
+import Cover07 from 'assets/album/07_valek_novelas_noturnas_livro_1.jpg';
+import Cover08 from 'assets/album/08_transmorfo.jpg';
+import Cover09 from 'assets/album/09_tudo_inspira_e_respira_poesia.jpg';
+import Cover10 from 'assets/album/10_de_vista_para_a_mesquita.jpg';
+import Cover11 from 'assets/album/11_o_alvorecer_da_rosa.jpg';
+import Cover12 from 'assets/album/12_no_fim_do_mundo.jpg';
+import Cover13 from 'assets/album/13_um_sonho_real_um_absoluto_cliche.jpg';
+import Cover14 from 'assets/album/14_depois_da_curva.jpg';
+import Cover15 from 'assets/album/15_o_povoado_no_fim_do_mundo.jpg';
+import Cover16 from 'assets/album/16_a_vovo_chamou_o_diabo_para_a_ceia.jpg';
+import Cover17 from 'assets/album/17_a_casa_das_hostesses_encontros_e_solidao.jpg';
+import Cover18 from 'assets/album/18_a_outra_ana.jpg';
+import Cover19 from 'assets/album/19_minha_vida_um_dorama.jpg';
+import Cover20 from 'assets/album/20_o_circulo_de_pedra.jpg';
 
 export const MockedData: AlbumProps[] = [
   {
