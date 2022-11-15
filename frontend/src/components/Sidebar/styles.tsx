@@ -1,14 +1,10 @@
 import styled from 'styled-components';
-
-interface SidebarContainerProps {
-  theme: string;
-  sidebar: boolean;
-};
+import { SidebarContainerProps } from 'types/Sidebar';
 
 export const Container = styled.nav<SidebarContainerProps>`
-  background: var(--background${(props) => props.theme});
   width: var(--widthSidebar${(props) => props.sidebar ? 'Opened' : 'Closed' });
-  border-right: 0.1rem solid var(--colorSecondary${(props) => props.theme});
+  background: var(--background${(props) => props.theme});
+  border-right: 0.3rem solid var(--colorSecondary${(props) => props.theme});
   height: 100%;
   margin-top: 4.5rem;
   position: fixed;
@@ -16,7 +12,7 @@ export const Container = styled.nav<SidebarContainerProps>`
   left: 0;
   overflow: hidden;
   transition: width 0.5s;
-  z-index: 999;
+  z-index: var(--max-z-index);
 `;
 
 export const Inner = styled.div`
@@ -45,9 +41,23 @@ export const Image = styled.img`
 export const Strong = styled.strong`
   font-size: 3rem;
   margin-bottom: 0.5rem;
+
+  &.gradientText {
+    background: var(--linearGradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 `;
 
 export const Span = styled.span`
   font-size: 1.2rem;
   margin-bottom: 2rem;
+
+  &.gradientText {
+    background: var(--linearGradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 `;

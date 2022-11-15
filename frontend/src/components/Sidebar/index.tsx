@@ -14,10 +14,6 @@ export function Sidebar() {
 
   const { language, theme } = useGlobalContext();
 
-  const handleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
-
   useEffect(() => {
     setMockedData(MockedData.find((data) => data.language === language));
   }, [language]);
@@ -28,8 +24,8 @@ export function Sidebar() {
         <Header>
           {
             sidebarOpen
-            ? <Close className="iconHandleSidebar" onClick={handleSidebar} />
-            : <MenuIcon className="iconHandleSidebar" onClick={handleSidebar} />
+            ? <Close className="iconHandleSidebar" onClick={() => setSidebarOpen(!sidebarOpen)} />
+            : <MenuIcon className="iconHandleSidebar" onClick={() => setSidebarOpen(!sidebarOpen)} />
           }
         </Header>
 
@@ -38,8 +34,8 @@ export function Sidebar() {
             sidebarOpen &&
             <>
               <Image src={Logo} alt="Sara Vertuan logo" />
-              <Strong>Sara Vertuan</Strong>
-              <Span>{mockedData?.role}</Span>
+              <Strong className="gradientText">Sara Vertuan</Strong>
+              <Span className="gradientText">{mockedData?.role}</Span>
             </>
           }
         </Content>

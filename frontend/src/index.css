@@ -15,6 +15,7 @@
   --bootstrapPrimary: #0168D9;
   --bootstrapSecondary: #596267;
 
+  --linearGradient: linear-gradient(90deg, #73C3AD 30%, #D97DAD 70%);
   --max-z-index: 999;
   --min-z-index: -10;
 
