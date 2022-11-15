@@ -15,6 +15,7 @@
   --bootstrapInfo: #596267;
 
   --max-z-index: 999;
+  --min-z-index: -10;
 
   --widthSidebarOpened: 26rem;
   --widthSidebarClosed: 7.2rem;

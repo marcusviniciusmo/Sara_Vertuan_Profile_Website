@@ -1,27 +1,20 @@
 import styled, { keyframes } from 'styled-components';
-
-interface CardProps {
-  background: string;
-  cardId: number;
-  length: number;
-};
+import { GallerySliderCardProps } from 'types/GalerySlider';
 
 const carouselEffect = keyframes`
   from {
     transform: rotateY(360deg) translateZ(22rem) rotateY(-360deg);
     z-index: 10;
     opacity: 1;
-  }
-
+  };
   50% {
-    z-index: -10;
-  }
-
+    z-index: var(--min-z-index);
+  };
   to {
     transform: rotateY(0deg) translateZ(22rem) rotateY(0deg);
     z-index: 10;
     opacity: 1;
-  }
+  };
 `;
 
 export const Carousel = styled.div`
@@ -33,8 +26,10 @@ export const Carousel = styled.div`
   perspective: 28rem;
 `;
 
-export const Card = styled.div<CardProps>`
+export const Card = styled.div<GallerySliderCardProps>`
   background: url(${(props) => props.background}) no-repeat;
+  animation: ${carouselEffect} 25s linear infinite;
+  animation-delay: -${(props) => props.length - props.cardId}s;
   background-position: center center;
   background-size: 10rem 15rem;
   width: 10rem;
@@ -47,6 +42,4 @@ export const Card = styled.div<CardProps>`
   position: absolute;
   top: 3.5rem;
   left: 12.5rem;
-  animation: ${carouselEffect} 25s linear infinite;
-  animation-delay: -${(props) => props.length - props.cardId}s;
 `;

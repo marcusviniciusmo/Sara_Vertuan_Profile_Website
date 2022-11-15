@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { GallerySliderProps } from "types/GalerySlider";
 import { MockedData } from "mocks/GallerySlider";
@@ -14,12 +13,12 @@ export function GallerySlider() {
   return (
     <Carousel>
       {
-        mockedData.map((image) => {
+        mockedData.map((imageCard) => {
           return (
             <Card
-              key={image.image.id}
-              background={image.image.url}
-              cardId={image.image.id}
+              key={imageCard.image.id}
+              background={imageCard.image.url}
+              cardId={imageCard.image.id}
               length={mockedData.length}
             >
             </Card>
