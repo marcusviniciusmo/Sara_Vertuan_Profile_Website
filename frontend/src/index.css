@@ -15,6 +15,11 @@
   --boxShadowLight: rgb(0 0 0 / 1);
   --iconLightMode: #FF8C00;
 
+  --colorIconMenuAboutMe: #FFB74D;
+  --colorIconMenuTestimonies: #8BC24A;
+  --colorIconMenuCollections: #1E88E5;
+  --colorIconMenuContact: #FF7043;
+
   --bootstrapInfo: #14A2B8;
   --bootstrapPrimary: #0168D9;
   --bootstrapSecondary: #596267;

@@ -17,28 +17,28 @@ export const MockedData: MenuProps[] = [
         link: '/aboutMe',
         title: 'Sobre Mim',
         hasBorder: false,
-        color: '#FFB74D'
+        color: 'var(--colorIconMenuAboutMe)'
       },
       {
         icon: Chat,
         link: '/testimonies',
         title: 'Depoimentos',
         hasBorder: false,
-        color: '#8BC24A'
+        color: 'var(--colorIconMenuTestimonies)'
       },
       {
         icon: Collections,
         link: '/gallery',
         title: 'Galeria',
         hasBorder: true,
-        color: '#1E88E5'
+        color: 'var(--colorIconMenuCollections)'
       },
       {
         icon: Call,
         link: '/contact',
         title: 'Contato',
         hasBorder: true,
-        color: '#FF7043'
+        color: 'var(--colorIconMenuContact)'
       },
     ]
   },
@@ -57,28 +57,28 @@ export const MockedData: MenuProps[] = [
         link: '/aboutMe',
         title: 'About Me',
         hasBorder: false,
-        color: '#FFB74D'
+        color: 'var(--colorIconMenuAboutMe)'
       },
       {
         icon: Chat,
         link: '/testimonies',
         title: 'Testimonies',
         hasBorder: false,
-        color: '#8BC24A'
+        color: 'var(--colorIconMenuTestimonies)'
       },
       {
         icon: Collections,
         link: '/gallery',
         title: 'Gallery',
         hasBorder: true,
-        color: '#1E88E5'
+        color: 'var(--colorIconMenuCollections)'
       },
       {
         icon: Call,
         link: '/contact',
         title: 'Contact',
         hasBorder: true,
-        color: '#FF7043'
+        color: 'var(--colorIconMenuContact)'
       },
     ]
   },
@@ -97,28 +97,28 @@ export const MockedData: MenuProps[] = [
         link: '/aboutMe',
         title: 'Su di me',
         hasBorder: false,
-        color: '#FFB74D'
+        color: 'var(--colorIconMenuAboutMe)'
       },
       {
         icon: Chat,
         link: '/testimonies',
         title: 'Deposizioni',
         hasBorder: false,
-        color: '#8BC24A'
+        color: 'var(--colorIconMenuTestimonies)'
       },
       {
         icon: Collections,
         link: '/gallery',
         title: 'Galleria',
         hasBorder: true,
-        color: '#1E88E5'
+        color: 'var(--colorIconMenuCollections)'
       },
       {
         icon: Call,
         link: '/contact',
         title: 'Contatto',
         hasBorder: true,
-        color: '#FF7043'
+        color: 'var(--colorIconMenuContact)'
       },
     ]
   },
