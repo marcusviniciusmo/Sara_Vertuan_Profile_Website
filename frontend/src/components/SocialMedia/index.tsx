@@ -1,52 +1,36 @@
+import { useEffect, useState } from "react";
 import { useGlobalContext } from "context";
-import { BsWhatsapp, BsEnvelope, BsFacebook, BsInstagram, BsBehance, BsLinkedin } from 'react-icons/bs';
+import { SocialMediaProps } from "types/SocialMedia";
+import { MockedData } from "mocks/SocialMedia";
 import { ContactCardContainer, ContactCardContent } from "styles/ContactCard";
 import { Strong, MediasArea, Media, Link } from "./styles";
 
 export function SocialMedia() {
-  const { theme } = useGlobalContext();
+  const [mockedData, setMockedData] = useState<SocialMediaProps>();
+
+  const { language, theme } = useGlobalContext();
+
+  useEffect(() => {
+    setMockedData(MockedData.find((data) => data.language === language));
+  }, [language]);
 
   return (
-    <ContactCardContainer theme={theme} width={35}>
-      <ContactCardContent theme={theme} width={35}>
-        <Strong>Confira Minhas Redes Sociais</Strong>
+    <ContactCardContainer theme={theme}>
+      <ContactCardContent theme={theme}>
+        <Strong>{mockedData?.title}</Strong>
 
         <MediasArea>
-          <Link href="https://web.whatsapp.com" target={'_blank'}>
-            <Media theme={theme} title='+5532261228'>
-              <BsWhatsapp />
-            </Media>
-          </Link>
-
-          <Link href="https://outlook.com" target={'_blank'}>
-            <Media theme={theme} title='saracvertuan@gmail.com'>
-              <BsEnvelope />
-            </Media>
-          </Link>
-
-          <Link href="https://facebook.com/designsaravertuan" target={'_blank'}>
-            <Media theme={theme} title='facebook.com/designsaravertuan'>
-              <BsFacebook />
-            </Media>
-          </Link>
-
-          <Link href="https://instagram.com/designersaravertuan" target={'_blank'}>
-            <Media theme={theme} title='instagram.com/designersaravertuan'>
-              <BsInstagram />
-            </Media>
-          </Link>
-
-          <Link href="https://behance.net/saravertuan" target={'_blank'}>
-            <Media theme={theme} title='behance.net/saravertuan'>
-              <BsBehance />
-            </Media>
-          </Link>
-
-          <Link href="https://linkedin.com/in/saracvertuan/" target={'_blank'}>
-            <Media theme={theme} title='linkedin.com/in/saracvertuan/'>
-              <BsLinkedin />
-            </Media>
-          </Link>
+          {
+            mockedData?.medias.map((media) => {
+              return (
+                <Link key={media.id} href={media.link} target='_blank'>
+                  <Media theme={theme} title={media.title}>
+                    <media.icon color={media.color} />
+                  </Media>
+                </Link>
+              )
+            })
+          }
         </MediasArea>
       </ContactCardContent>
     </ContactCardContainer>

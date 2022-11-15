@@ -4,7 +4,6 @@ const widthDefault = 40;
 
 interface ContactCardProps {
   theme: string;
-  width?: number;
 };
 
 export const borderEffect = keyframes`
@@ -14,7 +13,7 @@ export const borderEffect = keyframes`
 `;
 
 export const ContactCardContainer = styled.div<ContactCardProps>`
-  width: ${(props) => props.width ? props.width : widthDefault}rem;
+  width: ${widthDefault}rem;
   height: 50rem;
   border-radius: 0.8rem;
   position: relative;
@@ -31,9 +30,7 @@ export const ContactCardContainer = styled.div<ContactCardProps>`
     background: conic-gradient(
       var(--background${(props) => props.theme}), #595959);
     position: absolute;
-    width: ${(props) => props.width
-      ? props.width
-      : widthDefault}rem;
+    width: ${widthDefault}rem;
     height: 50rem;
     animation: ${borderEffect} 10s linear infinite;
     transition: 10s ease;
@@ -42,9 +39,7 @@ export const ContactCardContainer = styled.div<ContactCardProps>`
 
 export const ContactCardContent = styled.div<ContactCardProps>`
   background: var(--background${(props) => props.theme});
-  width: calc(${(props) => props.width
-    ? props.width
-    : widthDefault}rem - 0.3rem);
+  width: calc(${widthDefault}rem - 0.3rem);
   height: 49.7rem;
   padding: 2rem;
   display: flex;
