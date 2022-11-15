@@ -1,12 +1,9 @@
 import styled from 'styled-components';
-
-interface LayoutHeaderProps {
-  theme: string;
-};
+import { LayoutHeaderProps } from 'types/Header';
 
 export const LayoutHeader = styled.div<LayoutHeaderProps>`
   background: var(--background${(props) => props.theme});
-  border-bottom: 0.1rem solid var(--colorSecondary${(props) => props.theme});
+  border-bottom: 0.3rem solid var(--colorSecondary${(props) => props.theme});
   width: 100%;
   padding-block: 1rem;
   display: flex;
@@ -16,5 +13,5 @@ export const LayoutHeader = styled.div<LayoutHeaderProps>`
   gap: 3rem;
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: var(--maxz-z-index);
 `;
