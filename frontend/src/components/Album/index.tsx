@@ -52,14 +52,12 @@ export function Album() {
         <Page
           id={idPageLeft}
           className={classNameLeftSide}
-          side={classNameLeftSide}
           url={mockedData?.image[index].url}
         />
 
         <Page
           id={idPageRight}
           className={classNameRightSide}
-          side={classNameRightSide}
           title={mockedData?.image[index].title}
           author={mockedData?.image[index].author}
           publisher={mockedData?.image[index].publisher}

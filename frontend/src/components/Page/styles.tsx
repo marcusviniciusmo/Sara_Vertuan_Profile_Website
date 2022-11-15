@@ -1,16 +1,18 @@
 import styled from 'styled-components';
-
-interface PageContainerProps {
-  side: string;
-  url?: string;
-};
+import { PageContainerProps } from 'types/Page';
 
 export const PageContainer = styled.div<PageContainerProps>`
-  background: ${(props) => props.url ? `url(${props.url})` : `var(--background${props.theme})`};
-  border-radius: ${(props) => props.side === 'left' ? '1rem 0 0 1rem' : '0 1rem 1rem 0'};
-  transform-origin: ${(props) => props.side === 'left' ? '100% 50%' : '0% 50%'};
-  left: ${(props) => props.side === 'left' && 0};
-  right: ${(props) => props.side === 'right' && 0};
+  background: ${(props) => props.url
+    ? `url(${props.url})`
+    : `var(--background${props.theme})`};
+  border-radius: ${(props) => props.className === 'left'
+    ? '1rem 0 0 1rem'
+    : '0 1rem 1rem 0'};
+  transform-origin: ${(props) => props.className === 'left'
+    ? '100% 50%'
+    : '0% 50%'};
+  left: ${(props) => props.className === 'left' && 0};
+  right: ${(props) => props.className === 'right' && 0};
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
@@ -48,6 +50,7 @@ export const Footer = styled.div`
 export const Button = styled.a`
   background: var(--background${(props) => props.theme});
   color: var(--colorPrimary${(props) => props.theme});
+  text-decoration: none;
   border-radius: 0.4rem;
   box-shadow: 0.2rem 0.2rem 0.5rem;
   width: 13rem;
@@ -63,4 +66,12 @@ export const Button = styled.a`
     border: 0.1rem solid var(--background${(props) => props.theme});
     text-decoration: underline;
   }
+`;
+
+export const Span = styled.span`
+  color: var(--bootstrapInfo);
+  font-weight: 600;
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
 `;

@@ -11,8 +11,9 @@
   --colorSecondaryLight: rgba(0, 0, 0, 0.6);
   --hoverLight: rgba(0, 0, 0, 0.04);
 
+  --bootstrapInfo: #14A2B8;
   --bootstrapPrimary: #0168D9;
-  --bootstrapInfo: #596267;
+  --bootstrapSecondary: #596267;
 
   --max-z-index: 999;
   --min-z-index: -10;
@@ -21,17 +22,14 @@
   --widthSidebarClosed: 7.2rem;
   --widthSidebarIcon: 2.188rem;
 
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%;
+  /* 1rem = 10px */
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.6rem;
   margin: 0;
-}
-
-.noUnderline {
-  text-decoration: none;
 }
 
 .dialogOverlay {

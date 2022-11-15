@@ -1,26 +1,9 @@
 import { useGlobalContext } from 'context';
 import { Synopsis } from 'modals/Synopsis';
 import * as Dialog from '@radix-ui/react-dialog';
-import { PageContainer, Title, Info, Footer, Button } from "./styles";
+import { PageProps } from 'types/Page';
+import { PageContainer, Title, Info, Footer, Button, Span } from "./styles";
 import './styles.css';
-
-interface PageProps {
-  children?: React.ReactNode;
-  id: string;
-  className: string;
-  side: string;
-  url?: string;
-  title?: string;
-  author?: string;
-  publisher?: string;
-  year?: string;
-  labelSynopsis?: string;
-  synopsis?: string;
-  labelPost?: string;
-  link?: string;
-  page?: number;
-  lengthAlbum?: number;
-};
 
 export function Page(props: PageProps) {
   const { theme } = useGlobalContext();
@@ -29,11 +12,10 @@ export function Page(props: PageProps) {
     <PageContainer
       id={props.id}
       className={props.className}
-      side={props.side}
       url={props.url}
     >
       {
-        props.side === 'right' &&
+        props.className === 'right' &&
         <>
           <Title>{props.title}</Title>
 
@@ -51,7 +33,6 @@ export function Page(props: PageProps) {
 
               <Button
                 href={props.link}
-                className='noUnderline'
                 target={'_blank'}
                 theme={theme}
               >
@@ -64,7 +45,7 @@ export function Page(props: PageProps) {
             />
             </Dialog.Root>
 
-            <span>{`${props.page} / ${props.lengthAlbum}`}</span>
+            <Span>{`${props.page} / ${props.lengthAlbum}`}</Span>
           </Footer>
         </>
       }

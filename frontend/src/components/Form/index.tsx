@@ -11,7 +11,7 @@ export function Form() {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-  
+
   const { language, theme } = useGlobalContext();
 
   useEffect(() => {
@@ -102,7 +102,7 @@ export function Form() {
             <Button
               type="button"
               value={mockedData?.buttons[0].label}
-              background='var(--bootstrapInfo)'
+              background='var(--bootstrapSecondary)'
               onClick={cleanInputs}
             />
             <Button
