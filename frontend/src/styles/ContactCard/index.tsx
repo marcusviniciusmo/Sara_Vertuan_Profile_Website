@@ -1,20 +1,18 @@
 import styled, { keyframes } from "styled-components";
+import { ContactCardContainerProps, ContactCardContentProps } from "types/ContactCard";
 
-const widthDefault = 40;
-
-interface ContactCardProps {
-  theme: string;
-};
+const width = 40;
+const height = 50;
 
 export const borderEffect = keyframes`
   100% {
     transform: rotate(360deg);
-  }
+  };
 `;
 
-export const ContactCardContainer = styled.div<ContactCardProps>`
-  width: ${widthDefault}rem;
-  height: 50rem;
+export const ContactCardContainer = styled.div<ContactCardContainerProps>`
+  width: ${width}rem;
+  height: ${height}rem;
   border-radius: 0.8rem;
   position: relative;
   overflow: hidden;
@@ -30,21 +28,21 @@ export const ContactCardContainer = styled.div<ContactCardProps>`
     background: conic-gradient(
       var(--background${(props) => props.theme}), #595959);
     position: absolute;
-    width: ${widthDefault}rem;
-    height: 50rem;
+    width: ${width}rem;
+    height: ${height}rem;
     animation: ${borderEffect} 10s linear infinite;
     transition: 10s ease;
   }
 `;
 
-export const ContactCardContent = styled.div<ContactCardProps>`
+export const ContactCardContent = styled.div<ContactCardContentProps>`
   background: var(--background${(props) => props.theme});
-  width: calc(${widthDefault}rem - 0.3rem);
-  height: 49.7rem;
+  width: calc(${width}rem - 0.3rem);
+  height: calc(${height}rem - 0.3rem);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  z-index: 998;
+  z-index: var(--max-z-index);
 `;
