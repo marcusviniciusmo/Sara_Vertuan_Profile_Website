@@ -44,5 +44,5 @@ export const ContactCardContent = styled.div<ContactCardContentProps>`
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  z-index: var(--max-z-index);
+  z-index: calc(var(--max-z-index) - 1);
 `;
