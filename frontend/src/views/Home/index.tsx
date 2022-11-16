@@ -7,10 +7,10 @@ import { HomeProps } from "types/Home";
 import { MockedData } from "mocks/Home";
 import { Interface } from "styles/Interface";
 import { ContainerText, Title, Text } from "./styles";
-import './styles.css';
 
 export function Home() {
   const [mockedData, setMockedData] = useState<HomeProps>();
+
   const { language, theme } = useGlobalContext();
 
   useEffect(() => {
