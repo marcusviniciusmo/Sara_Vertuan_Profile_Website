@@ -24,6 +24,13 @@
   --bootstrapPrimary: #0168D9;
   --bootstrapSecondary: #596267;
 
+  --colorIconSocialMediaWhatsapp: #04A784;
+  --colorIconSocialMediaMail: #0361B6;
+  --colorIconSocialMediaFacebook: #139CF7;
+  --colorIconSocialMediaInstagram: #E6683C;
+  --colorIconSocialMediaBehance: #000000;
+  --colorIconSocialMediaLinkedin: #0B65C2;
+
   --linearGradient: linear-gradient(90deg, #73C3AD 30%, #D97DAD 70%);
   --max-z-index: 999;
   --min-z-index: -10;
