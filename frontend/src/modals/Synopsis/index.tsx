@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useGlobalContext } from 'context';
-import * as Dialog from '@radix-ui/react-dialog';
-import { Close } from '@mui/icons-material';
+import { Close as CloseIcon } from '@mui/icons-material';
 import { SynopsisMocks, SynopsisProps } from 'types/Synopsis';
 import { MockedData } from 'mocks/Synopsis';
-import './styles.css';
+import { Portal, Overlay, Content, Close, Title } from './styles';
 
 export function Synopsis({ title, synopsis }: SynopsisProps) {
   const [mockedData, setMockedData] = useState<SynopsisMocks>();
+
   const { language, theme } = useGlobalContext();
 
   useEffect(() => {
@@ -15,27 +15,18 @@ export function Synopsis({ title, synopsis }: SynopsisProps) {
   }, [language]);
 
   return (
-    <Dialog.Portal>
-      <Dialog.Overlay className='dialogOverlay' />
+    <Portal>
+      <Overlay className='dialogOverlay' />
 
-      <Dialog.Content
-        className='dialogContent'
-        style={{
-          background: `var(--background${theme})`,
-          color: `var(--colorPrimary${theme})`
-        }}
-      >
-        <Dialog.Close
-          className={`iconClose${theme}`}
-          title={mockedData?.labelIconClose}
-        >
-          <Close />
-        </Dialog.Close>
+      <Content theme={theme}>
+        <Close theme={theme} title={mockedData?.labelIconClose}>
+          <CloseIcon />
+        </Close>
 
-        <Dialog.Title>{title}</Dialog.Title>
+        <Title>{title}</Title>
 
         <span>{synopsis}</span>
-      </Dialog.Content>
-    </Dialog.Portal>
+      </Content>
+    </Portal>
   );
 };
