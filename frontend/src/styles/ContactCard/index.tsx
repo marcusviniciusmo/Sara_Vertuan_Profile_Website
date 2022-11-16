@@ -11,7 +11,7 @@ export const borderEffect = keyframes`
 `;
 
 export const ContactCardContainer = styled.div<ContactCardContainerProps>`
-  width: ${width}rem;
+  max-width: ${width}rem;
   height: ${height}rem;
   border-radius: 0.8rem;
   position: relative;
