@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { CardContainerProps, CardFigureProps } from 'types/Card';
 
+const widthImage = '9rem';
+const heightImage = '9rem';
+
 export const Container = styled.div<CardContainerProps>`
   background: var(--background${(props) => props.theme});
   border-top: 0.3rem solid var(--colorSecondary${(props) => props.theme});
@@ -25,8 +28,8 @@ export const Figure = styled.div<CardFigureProps>`
     (props) => props.theme === 'Light' && 'var(--colorPrimaryLight)'};
   background: var(--backgroundLight);
   color: var(--colorPrimary${(props) => props.theme});
-  width: 7rem;
-  height: 7rem;
+  width: ${widthImage};
+  height: ${heightImage};
   margin: 2rem auto 0 auto;
   border-radius: 50%;
   display: flex;
@@ -35,12 +38,17 @@ export const Figure = styled.div<CardFigureProps>`
   overflow: hidden;
 `;
 
+export const Image = styled.img`
+  width: ${widthImage};
+  height: ${heightImage};
+`;
+
 export const Content = styled.div`
-  margin-top: 3rem;
   padding: 2rem;
 `;
 
 export const Name = styled.strong`
+  font-size: 1.4rem;
   display: block;
 `;
 
@@ -50,6 +58,6 @@ export const Role = styled.span`
 `;
 
 export const Text = styled.p`
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-align: justify;
 `;

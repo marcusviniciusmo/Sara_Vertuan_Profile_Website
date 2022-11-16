@@ -1,4 +1,9 @@
-import { TestimoniesProps } from "types/Testimonies"
+import { TestimoniesProps } from "types/Testimonies";
+import Author01 from 'assets/card/gabriela_maya.png';
+import Author02 from 'assets/card/bettina_winkler.png';
+import Author03 from 'assets/card/rodrigo_seixas.png';
+import Author04 from 'assets/card/ana_maria_duarte.png';
+import Author05 from 'assets/card/aurelia_cruz.jpg';
 
 export const MockedData: TestimoniesProps[] = [
   {
@@ -7,7 +12,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 1,
-          image: '',
+          image: Author01,
           name: 'Gabriela Maya',
           role: 'Autora',
           text: `Sara Vertuan é uma profissional sensível e talentosa, consegue
@@ -22,7 +27,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 2,
-          image: '',
+          image: Author02,
           name: 'Bettina Winkler',
           role: 'Autora',
           text: `Sara é uma excelente profissional, que se esforça ao máximo
@@ -35,7 +40,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 3,
-          image: '',
+          image: Author03,
           name: 'Rodrigo Seixas',
           role: 'Autor e Quadrinista',
           text: `Sara é uma das profissionais mais completas do mercado. Possui
@@ -48,7 +53,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 4,
-          image: '',
+          image: Author04,
           name: 'Ana Maria Duarte',
           role: 'Autora',
           text: `O trabalho da Sara se mostrou melhor do que eu imaginava. A
@@ -61,7 +66,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 5,
-          image: '',
+          image: Author05,
           name: 'Aurélia Cruz',
           role: 'Autora',
           text: `Precisava de uma capa mas já tinha passado por várias sugestões
@@ -83,7 +88,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 1,
-          image: '',
+          image: Author01,
           name: 'Gabriela Maya',
           role: 'Author',
           text: `Sara Vertuan is a sensitive and talented professional, she
@@ -98,7 +103,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 2,
-          image: '',
+          image: Author02,
           name: 'Bettina Winkler',
           role: 'Author',
           text: `Sara is an excellent professional, who tries her best to
@@ -110,7 +115,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 3,
-          image: '',
+          image: Author03,
           name: 'Rodrigo Seixas',
           role: 'Author and Comic Book Artist',
           text: `Sara is one of the most complete professionals on the market.
@@ -123,7 +128,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 4,
-          image: '',
+          image: Author04,
           name: 'Ana Maria Duarte',
           role: 'Author',
           text: `Sara's work turned out to be better than I imagined. The quality
@@ -136,7 +141,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 5,
-          image: '',
+          image: Author05,
           name: 'Aurélia Cruz',
           role: 'Author',
           text: `I needed a cover but I had already gone through several
@@ -157,7 +162,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 1,
-          image: '',
+          image: Author01,
           name: 'Gabriela Maya',
           role: 'Autore',
           text: `Sara Vertuan è una professionista sensibile e talentuosa,
@@ -173,7 +178,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 2,
-          image: '',
+          image: Author02,
           name: 'Bettina Winkler',
           role: 'Autore',
           text: `Sara è un'ottima professionista, che fa del suo meglio
@@ -187,7 +192,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 3,
-          image: '',
+          image: Author03,
           name: 'Rodrigo Seixas',
           role: 'Autore e Fumetti',
           text: `Sara è una delle professioniste più complete sul mercato. Ha
@@ -200,7 +205,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 4,
-          image: '',
+          image: Author04,
           name: 'Ana Maria Duarte',
           role: 'Autore',
           text: `Il lavoro di Sara si è rivelato migliore di quanto immaginassi.
@@ -214,7 +219,7 @@ export const MockedData: TestimoniesProps[] = [
       {
         card: {
           id: 5,
-          image: '',
+          image: Author05,
           name: 'Aurélia Cruz',
           role: 'Autore',
           text: `Avevo bisogno di una copertina ma avevo già esaminato diversi
