@@ -27,8 +27,10 @@ export function AboutMe() {
           <Picture cover={Me} theme={theme} />
 
           <Text>
-            <Strong>{mockedData?.strong}</Strong>
-            <Span>{mockedData?.text}</Span>
+            <Strong className="linearGradient">{mockedData?.strong}</Strong>
+            <Span className="linearGradient" theme={theme}>
+              {mockedData?.text}
+            </Span>
           </Text>
         </Container>
       </Interface>

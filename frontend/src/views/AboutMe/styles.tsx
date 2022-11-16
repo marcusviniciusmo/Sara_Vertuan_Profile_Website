@@ -1,9 +1,5 @@
 import styled from 'styled-components';
-
-interface PictureProps {
-  cover: string;
-  theme: string;
-};
+import { AboutMePictureProps, AboutMeSpanProps } from 'types/AboutMe';
 
 export const Container = styled.div`
   display: flex;
@@ -17,7 +13,7 @@ export const Container = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-export const Picture = styled.div<PictureProps>`
+export const Picture = styled.div<AboutMePictureProps>`
   background: url(${(props) => props.cover}) no-repeat;
   background-size: cover;
   width: 25rem;
@@ -37,8 +33,8 @@ export const Strong = styled.strong`
   display: block;
 `;
 
-export const Span = styled.span`
+export const Span = styled.span<AboutMeSpanProps>`
   font-style: italic;
+  font-weight: ${(props) => props.theme === 'Light' && '600'};
   display: block;
-  opacity: 0.8;
 `;

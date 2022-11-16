@@ -41,23 +41,9 @@ export const Image = styled.img`
 export const Strong = styled.strong`
   font-size: 3rem;
   margin-bottom: 0.5rem;
-
-  &.gradientText {
-    background: var(--linearGradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
 `;
 
 export const Span = styled.span`
   font-size: 1.2rem;
   margin-bottom: 2rem;
-
-  &.gradientText {
-    background: var(--linearGradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
 `;

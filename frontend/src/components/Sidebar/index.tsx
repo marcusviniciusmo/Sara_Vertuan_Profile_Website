@@ -34,8 +34,8 @@ export function Sidebar() {
             sidebarOpen &&
             <>
               <Image src={Logo} alt="Sara Vertuan logo" />
-              <Strong className="gradientText">Sara Vertuan</Strong>
-              <Span className="gradientText">{mockedData?.role}</Span>
+              <Strong className="linearGradient">Sara Vertuan</Strong>
+              <Span className="linearGradient">{mockedData?.role}</Span>
             </>
           }
         </Content>
