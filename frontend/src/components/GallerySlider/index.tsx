@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GallerySliderProps } from "types/GalerySlider";
+import { GallerySliderProps } from "types/GallerySlider";
 import { MockedData } from "mocks/GallerySlider";
 import { Carousel, Card } from "./styles";
 

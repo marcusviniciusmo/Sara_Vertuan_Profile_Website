@@ -1,4 +1,4 @@
-import { GallerySliderProps } from "types/GalerySlider";
+import { GallerySliderProps } from "types/GallerySlider";
 import Cover01 from 'assets/gallerySlider/cover01.png';
 import Cover02 from 'assets/gallerySlider/cover02.png';
 import Cover03 from 'assets/gallerySlider/cover03.png';

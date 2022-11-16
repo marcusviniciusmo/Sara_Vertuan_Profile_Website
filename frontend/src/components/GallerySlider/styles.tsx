@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { GallerySliderCardProps } from 'types/GalerySlider';
+import { GallerySliderCardProps } from 'types/GallerySlider';
 
 const carouselEffect = keyframes`
   from {
