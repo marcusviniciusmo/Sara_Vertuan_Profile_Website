@@ -17,7 +17,6 @@ export const Container = styled.div<CardContainerProps>`
   
   &:hover {
     z-index: var(--max-z-index);
-    transform: scale(1.2);
   }
 `;
 

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useGlobalContext } from "context";
 import { IoIosAdd } from 'react-icons/io';
@@ -8,10 +9,11 @@ import { TestimoniesProps } from "types/Testimonies";
 import { MockedData } from "mocks/Testimonies";
 import { Interface } from "styles/Interface";
 import { Container, Toggle, Item } from "./styles";
-import './styles.css';
 
 export function Testimonies() {
   const [mockedData, setMockedData] = useState<TestimoniesProps>();
+  const [active, setActive] = useState<boolean>(false);
+
   const { language, theme } = useGlobalContext();
 
   useEffect(() => {
@@ -19,6 +21,8 @@ export function Testimonies() {
   }, [language]);
 
   const showTestimonies = () => {
+    setActive(!active);
+
     let container = document.querySelector('.testimoniesContainer');
     let toggle = document.querySelector('.testimoniesToggle');
 
@@ -33,8 +37,8 @@ export function Testimonies() {
       <Sidebar />
 
       <Interface>
-        <Container className='testimoniesContainer' onClick={showTestimonies}>
-          <Toggle className='testimoniesToggle' theme={theme}>
+        <Container className='testimoniesContainer'>
+          <Toggle className='testimoniesToggle' theme={theme} onClick={showTestimonies}>
             <IoIosAdd />
           </Toggle>
           {
@@ -42,8 +46,10 @@ export function Testimonies() {
               return (
                 <Item
                   key={card.card.id}
-                  className={`item${card.card.id}`}
-                  >
+                  cardId={card.card.id}
+                  length={mockedData.cards.length}
+                  className={`${active && 'active'} item${card.card.id}`}
+                >
                   <Card card={card.card} />
                 </Item>
               )
